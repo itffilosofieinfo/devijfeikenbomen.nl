@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo-section">
+        <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="De vijf eikenbomen logo" class="site-logo">
+      </div>
+      <h1 class="site-title">
+        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      </h1>
+      <p class="tagline">{{ site.description }}</p>
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/over/' | relative_url }}">Over</a></li>
+        <li><a href="{{ '/agenda/' | relative_url }}">Agenda</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

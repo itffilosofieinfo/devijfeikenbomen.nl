@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="80" height="80">
+  <!-- Oak tree silhouette -->
+  <defs>
+    <style>
+      .tree-foliage { fill: #2f3b35; }
+    </style>
+  </defs>
+  
+  <!-- Trunk -->
+  <rect x="54" y="70" width="12" height="40" class="tree-foliage"/>
+  
+  <!-- Main canopy (circle) -->
+  <circle cx="60" cy="50" r="35" class="tree-foliage"/>
+  
+  <!-- Upper left foliage bulge -->
+  <circle cx="35" cy="40" r="20" class="tree-foliage"/>
+  
+  <!-- Upper right foliage bulge -->
+  <circle cx="85" cy="40" r="20" class="tree-foliage"/>
+  
+  <!-- Top center accent -->
+  <circle cx="60" cy="20" r="18" class="tree-foliage"/>
+</svg>
