@@ -1161,4 +1161,97 @@ body{
   .section-title::after{ width: 44px; }
 }
 
+/* =========================
+   FIX: Vijf eiken layout (desktop + mobiel)
+   - behandelt “intro-kaart” als full-width
+   - maakt 3+2 compositie voor de 5 eiken
+   ========================= */
+
+#vijf-eiken .eiken{
+  /* Niet te breed: ziet er dan meteen ‘tabelachtig’ uit */
+  width: min(820px, 100%);
+  margin: 18px auto 0;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+/* ALTIJD: eerste item (= jouw introkaart als die erin zit) full width */
+#vijf-eiken .eiken > .eik:first-child{
+  grid-column: 1 / -1;
+  padding: 18px 18px 16px;
+  min-height: auto;
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(31,35,33,0.08);
+  border-radius: 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.05);
+}
+
+/* De 5 echte eiken: we gaan uit van posities 2 t/m 6 */
+#vijf-eiken .eiken > .eik:nth-child(2),
+#vijf-eiken .eiken > .eik:nth-child(3),
+#vijf-eiken .eiken > .eik:nth-child(4){
+  grid-column: span 4; /* 3 naast elkaar */
+}
+
+#vijf-eiken .eiken > .eik:nth-child(5),
+#vijf-eiken .eiken > .eik:nth-child(6){
+  grid-column: span 6; /* 2 onder elkaar (breed) */
+}
+
+/* Basestijl voor de 5 eiken-kaarten (2..6) */
+#vijf-eiken .eiken > .eik:nth-child(n+2){
+  padding: 18px 18px 16px;
+  min-height: 120px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(31,35,33,0.08);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.05);
+}
+
+/* Typografie in de eiken-kaarten: lucht en leesbaarheid */
+#vijf-eiken .eik strong{
+  display:block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  letter-spacing: 0.1px;
+}
+#vijf-eiken .eik span{
+  display:block;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(31,35,33,0.72);
+}
+
+/* Tablet: 2 per rij (intro blijft full) */
+@media (max-width: 900px){
+  #vijf-eiken .eiken{
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  #vijf-eiken .eiken > .eik:first-child{
+    grid-column: 1 / -1;
+  }
+
+  /* 5 eiken allemaal 1 kolom breed (dus 2 per rij) */
+  #vijf-eiken .eiken > .eik:nth-child(n+2){
+    grid-column: auto;
+    min-height: auto;
+  }
+}
+
+/* Mobiel: 1 per rij, extra padding */
+@media (max-width: 520px){
+  #vijf-eiken .eiken{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  #vijf-eiken .eiken > .eik:first-child,
+  #vijf-eiken .eiken > .eik:nth-child(n+2){
+    padding: 16px 16px 14px;
+  }
+}
 
