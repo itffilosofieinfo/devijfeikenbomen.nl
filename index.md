@@ -154,15 +154,6 @@ Ik ben er niet om het te verzachten of te verklaren, maar om mee te lopen en het
           Vijf aandachtspunten die richting geven in gesprekken en aanwezigheid wanneer het einde nabij is.
         </p>
 
-        <div class="eiken" role="list">
-          <!-- Intro kaart (optioneel - verwijder deze als je hem niet wilt) -->
-          <div class="eik" role="listitem">
-            <strong>De naam is geen beeldspraak</strong>
-            <span>
-              Deze vijf 'eikenbomen' vormen de kern van mijn werkwijze: aandachtspunten die richting geven zonder een stappenplan te worden.
-            </span>
-          </div>
-
           <!-- De 5 eiken -->
           <div class="eik" role="listitem">
             <strong>Aandacht</strong>
