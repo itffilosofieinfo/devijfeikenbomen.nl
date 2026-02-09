@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "De vijf eikenbomen – palliatieve begeleiding Zweeloo"
+title: Home
 description: "De vijf eikenbomen biedt palliatieve begeleiding in Zweeloo en omgeving: aanwezigheid, gesprek en steun voor mensen in de laatste levensfase en hun naasten."
 permalink: /
 ---
