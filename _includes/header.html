@@ -1,14 +1,13 @@
 <header class="site-header">
-  <div class="container">
-    <div class="header-content">
-      <div class="logo-section">
-        <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="De vijf eikenbomen logo" class="site-logo">
-      </div>
-      <h1 class="site-title">
-        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      </h1>
-      <p class="tagline">{{ site.description }}</p>
-    </div>
+  <div class="container header-inner">
+    
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img
+        class="brand-logo"
+        src="{{ '/assets/images/devijfeikenbomen-logo-horiz.png' | relative_url }}"
+        alt="De Vijf Eikenbomen">
+    </a>
+
     <nav class="site-nav">
       <ul>
         <li><a href="{{ '/' | relative_url }}">Home</a></li>
@@ -17,5 +16,6 @@
         <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
       </ul>
     </nav>
+
   </div>
 </header>
