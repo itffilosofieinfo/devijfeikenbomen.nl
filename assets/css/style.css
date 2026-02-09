@@ -1,16 +1,17 @@
 :root{
-  --bg: #f6f3ee;
-  --card: rgba(255,255,255,0.72);
-  --ink: #232825;
-  --muted: rgba(35,40,37,0.72);
-  --line: rgba(35,40,37,0.14);
+  /* Stil landschap */
+  --bg: #f8f7f4;
+  --paper: #ffffff;
+  --ink: #1f2321;
+  --muted: rgba(31,35,33,0.68);
+  --line: rgba(31,35,33,0.12);
 
-  --blue: #2d5f7a;
-  --green: #2f6b4f;
+  /* Accent: vergrijsd blauwgroen */
+  --accent: #4f6f6a;
+  --accent-soft: rgba(79,111,106,0.14);
 
-  --radius: 18px;
-  --shadow: 0 10px 30px rgba(0,0,0,0.08);
   --max: 980px;
+  --radius: 14px;
 }
 
 /* Base */
@@ -18,362 +19,334 @@
 html,body{ height:100%; }
 body{
   margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  line-height:1.6;
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+  line-height:1.65;
   color:var(--ink);
-  background:
-    radial-gradient(1200px 600px at 20% 0%, rgba(45,95,122,0.12), transparent 55%),
-    radial-gradient(1100px 700px at 80% 10%, rgba(47,107,79,0.12), transparent 55%),
-    linear-gradient(180deg, #fbfaf7 0%, var(--bg) 55%, #fbfaf7 100%);
+  background: var(--bg);
 }
 
-a{ color:var(--blue); text-underline-offset:3px; }
-a:hover{ text-decoration-thickness:2px; }
+/* Links */
+a{
+  color: var(--accent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+a:hover{ text-decoration-thickness: 2px; }
 
 /* container */
-.container,
 .wrap{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:0 18px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
+/* Skip */
 .skip{
   position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
 }
 .skip:focus{
-  left:18px; top:18px; width:auto; height:auto;
-  padding:10px 12px; background:#fff;
-  border-radius:10px; box-shadow:var(--shadow);
+  left:20px; top:18px; width:auto; height:auto;
+  padding:10px 12px; background: var(--paper);
+  border-radius: 10px;
+  border: 1px solid var(--line);
   z-index:999;
 }
 
-/* Header */
+/* Header (plat, stil) */
 .site-header{
-  position:sticky;
-  top:0;
-  z-index:20;
-  backdrop-filter: blur(10px);
-  background: rgba(246,243,238,0.65);
-  border-bottom:1px solid var(--line);
-  overflow:visible;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(248,247,244,0.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
 }
 
-.header-inner{
+.topbar{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:14px;
-  padding:12px 0;
+  gap: 18px;
+  padding: 8px 0;
 }
 
+/* Brand */
 .brand{
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-  color:inherit;
-  flex:0 0 auto;
-}
-
-.brand-logo{
-  display:block;
-  height:56px;
-  width:auto;
-  max-width:260px;
-  opacity:1;
-  visibility:visible;
-}
-
-/* jouw huidige nav in header.html: <nav class="site-nav"> */
-.site-nav ul{
-  list-style:none;
   display:flex;
-  flex-wrap:wrap;
-  gap:10px 14px;
-  justify-content:flex-end;
   align-items:center;
-  margin:0;
-  padding:0;
-}
-
-.site-nav a{
-  font-size:13px;
-  color: rgba(35,40,37,0.78);
+  gap: 12px;
   text-decoration:none;
-  padding:8px 10px;
-  border-radius:999px;
-  display:inline-block;
-}
-.site-nav a:hover{
-  background: rgba(47,59,53,0.06);
-  color: var(--ink);
+  color: inherit;
 }
 
-/* (optioneel) behoud van je eerdere nav-class als je die elders gebruikt */
+.logo{
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+}
+.logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 5px;
+  display:block;
+}
+
+.brand-text strong{
+  display:block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  line-height: 1.2;
+}
+.brand-text span{
+  display:block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 1px;
+  line-height: 1.2;
+}
+
+/* Nav: rustig, dun, geen pillen */
 .nav{
   display:flex;
   flex-wrap:wrap;
-  gap:10px 14px;
+  gap: 10px 14px;
   justify-content:flex-end;
   align-items:center;
 }
 .nav a{
-  font-size:13px;
-  color: rgba(35,40,37,0.78);
+  font-size: 13px;
+  color: rgba(31,35,33,0.78);
   text-decoration:none;
-  padding:8px 10px;
-  border-radius:999px;
+  padding: 6px 0;          /* geen “knoppen” */
+  border-radius: 0;
+  border-bottom: 1px solid transparent;
 }
-.nav a:hover{ background: rgba(47,59,53,0.06); color: var(--ink); }
-
-/* Cards & sections */
-.card{
-  background: var(--card);
-  border: 1px solid rgba(35,40,37,0.10);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+.nav a:hover{
+  color: var(--ink);
+  border-bottom-color: rgba(79,111,106,0.45);
 }
 
-.section{ padding:26px 0; }
-.section-card{ padding:22px; }
+/* Typografie hiërarchie */
+h1{
+  margin: 0 0 10px;
+  font-weight: 600;
+  font-size: clamp(30px, 3.2vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.3px;
+}
+h2{
+  margin: 0 0 10px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+}
+p{ margin: 0 0 14px; }
+
+.muted{ color: var(--muted); }
+.small{ font-size: 13px; color: var(--muted); }
+
+/* Secties: geen cards, wel ritme + lijnen */
+.section{
+  padding: 34px 0;
+  border-top: 1px solid var(--line);
+}
+.section:first-of-type{ border-top: 0; }
 
 .section-title{
-  margin:0 0 10px;
-  font-size:18px;
-  letter-spacing:-0.2px;
+  margin: 0 0 10px;
+  font-size: 18px;
+  letter-spacing: -0.1px;
 }
 
-.muted{ color:var(--muted); }
-.small{ font-size:13px; }
+/* “Card” classes neutraal maken (zodat je HTML niet hoeft te wijzigen) */
+.card{
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.section-card{
+  padding: 0;              /* we doen spacing met .section */
+}
 
-/* Hero */
-.hero{ padding:36px 0 24px; }
-
+/* Hero: rust, geen blokken */
+.hero{
+  padding: 42px 0 28px;
+}
 .hero-grid{
   display:grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap:18px;
-  align-items:stretch;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 26px;
+  align-items:start;
 }
-
-.hero-main{ padding:26px 22px; }
 
 .kicker{
   display:inline-flex;
   align-items:center;
-  gap:10px;
-  font-size:12px;
-  color: rgba(35,40,37,0.72);
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid rgba(35,40,37,0.12);
-  background: rgba(255,255,255,0.55);
-  margin-bottom:14px;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  margin-bottom: 12px;
 }
-
 .dot{
-  width:9px; height:9px; border-radius:50%;
-  background: linear-gradient(135deg, var(--blue), var(--green));
-  box-shadow: 0 0 0 3px rgba(45,95,122,0.10);
-}
-
-h1{
-  margin:0 0 10px;
-  font-weight:700;
-  font-size: clamp(28px, 3.2vw, 40px);
-  line-height:1.15;
-  letter-spacing:-0.4px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
 .lead{
-  margin:0 0 18px;
-  font-size:16px;
-  color: rgba(35,40,37,0.80);
-  max-width:58ch;
+  font-size: 18px;
+  color: rgba(31,35,33,0.84);
+  max-width: 62ch;
+  margin-bottom: 18px;
 }
 
+/* CTA: geen “glossy buttons”, wel rustige links */
 .cta-row{
   display:flex;
   flex-wrap:wrap;
-  gap:10px;
-  margin-top:8px;
+  gap: 14px;
+  margin-top: 10px;
 }
-
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:12px 14px;
-  border-radius:14px;
-  border:1px solid rgba(35,40,37,0.14);
-  text-decoration:none;
-  font-size:14px;
-  color:var(--ink);
-  background: rgba(255,255,255,0.70);
-}
-.btn.primary{
-  border: 1px solid rgba(45,95,122,0.28);
-  background: linear-gradient(135deg, rgba(45,95,122,0.14), rgba(47,107,79,0.12));
-}
-.btn:hover{ transform: translateY(-1px); }
-
-.hero-side{
-  padding:22px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  gap:14px;
-}
-
-.side-block h2{
-  margin:0 0 8px;
-  font-size:14px;
-  letter-spacing:0.2px;
-}
-.side-block p{
-  margin:0;
-  font-size:13px;
-  color: rgba(35,40,37,0.74);
-}
-
-.pill-row{ margin-top:10px; }
-.pill{
   display:inline-block;
-  font-size:12px;
-  color: rgba(35,40,37,0.72);
-  border:1px solid rgba(35,40,37,0.14);
-  border-radius:999px;
-  padding:7px 10px;
-  background: rgba(255,255,255,0.55);
-  margin: 6px 6px 0 0;
+  text-decoration:none;
+  color: var(--accent);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(79,111,106,0.35);
+}
+.btn:hover{ border-bottom-color: rgba(79,111,106,0.75); }
+.btn.primary{
+  color: var(--accent);
+  border-bottom-color: rgba(79,111,106,0.55);
 }
 
-.cols{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:14px;
-  align-items:start;
-}
-
-.list{ margin:12px 0 0; padding-left:18px; }
-.list li{ margin:6px 0; }
-
-.notice{
-  border-left:4px solid rgba(47,107,79,0.35);
-  padding:12px 12px 12px 14px;
-  background: rgba(47,107,79,0.06);
-  border-radius:14px;
-  margin-top:14px;
-  color: rgba(35,40,37,0.78);
-  font-size:13px;
-}
-
+/* Divider / fineprint */
 .divider{
   height:1px;
   border:0;
   background: var(--line);
-  margin:14px 0;
+  margin: 18px 0;
 }
-
 .fineprint{
-  margin:0;
-  font-size:13px;
+  margin: 0;
+  font-size: 14px;
   color: var(--muted);
-  max-width: 70ch;
+  max-width: 75ch;
 }
 
-/* Five eiken */
+/* Side blocks (rechter kolom): subtiele “notities” */
+.hero-side{
+  border-left: 1px solid var(--line);
+  padding-left: 18px;
+}
+.side-block h2{
+  margin: 0 0 6px;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+}
+.side-block p{
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: rgba(31,35,33,0.76);
+}
+
+/* Pills: weghalen (te druk) */
+.pill-row{ display:none; }
+.pill{ display:none; }
+
+/* Columns */
+.cols{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items:start;
+}
+
+/* Lists */
+.list{ margin: 12px 0 0; padding-left: 18px; }
+.list li{ margin: 7px 0; }
+
+/* Notice: van “kaart” naar rustige zijlijn */
+.notice{
+  border-left: 3px solid rgba(79,111,106,0.35);
+  padding: 10px 0 10px 14px;
+  background: transparent;
+  border-radius: 0;
+  margin-top: 14px;
+  color: rgba(31,35,33,0.78);
+  font-size: 14px;
+}
+
+/* Five eiken: rustiger grid, meer lucht */
 .eiken{
   display:grid;
   grid-template-columns: repeat(5, 1fr);
-  gap:10px;
-  margin-top:14px;
+  gap: 14px;
+  margin-top: 18px;
 }
-
 .eik{
-  padding:14px 14px 12px;
-  border-radius:16px;
-  border:1px solid rgba(35,40,37,0.10);
-  background: rgba(255,255,255,0.58);
-  min-height:110px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  min-height: auto;
 }
-.eik strong{ display:block; font-size:14px; margin-bottom:4px; }
-.eik span{ font-size:13px; color: rgba(35,40,37,0.72); }
+.eik strong{
+  display:block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.eik span{
+  font-size: 14px;
+  color: rgba(31,35,33,0.74);
+}
 
 /* Contact */
 .contact-grid{
   display:grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap:14px;
+  gap: 22px;
   align-items:start;
 }
-.contact-line{ margin: 0 0 8px; }
+.contact-line{ margin: 0 0 10px; }
 
 /* Footer */
 .site-footer{
-  padding:26px 0 40px;
-  color: rgba(35,40,37,0.62);
-  font-size:12px;
+  padding: 28px 0 44px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
 }
-
 .footer-row{
   display:flex;
   flex-wrap:wrap;
-  gap:10px;
+  gap: 10px;
   justify-content:space-between;
   align-items:center;
 }
-.footer-links a{ color: rgba(35,40,37,0.70); }
+.footer-links a{ color: rgba(31,35,33,0.70); }
 
 /* Responsive */
 @media (max-width: 860px){
   .hero-grid{ grid-template-columns: 1fr; }
+  .hero-side{ border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 16px; }
   .cols{ grid-template-columns: 1fr; }
   .contact-grid{ grid-template-columns: 1fr; }
-  .site-nav ul{ justify-content:flex-start; }
-  .brand-logo{ height:52px; }
   .eiken{ grid-template-columns: 1fr 1fr; }
+  .nav{ justify-content:flex-start; }
 }
 
 @media (max-width: 520px){
-  .header-inner{ flex-direction:column; align-items:flex-start; }
-  .site-nav ul{ justify-content:flex-start; }
+  .topbar{ flex-direction:column; align-items:flex-start; }
   .eiken{ grid-template-columns: 1fr; }
-}
-/* Header compacter (index.md gebruikt .topbar + .logo + .brand-text + .nav) */
-.topbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  padding:6px 0;        /* was impliciet groter door line-height/inhoud */
-}
-
-.logo{
-  width:40px;
-  height:40px;
-}
-.logo img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  padding:4px;
-  display:block;
-}
-
-.brand-text strong{
-  font-size:13px;
-  line-height:1.15;
-}
-.brand-text span{
-  font-size:11px;
-  line-height:1.15;
-  margin-top:0;
-}
-
-.nav a{
-  font-size:12px;
-  padding:6px 8px;
 }
