@@ -136,23 +136,33 @@ a:hover {
 }
 
 .logo {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 14px;
-  border: 1px solid rgba(107,142,127,0.2);
-  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(250,248,243,0.8));
+  border: 1.5px solid rgba(107,142,127,0.25);
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,248,243,0.9));
   display: grid;
   place-items: center;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(107,142,127,0.12);
+  box-shadow: 
+    0 4px 12px rgba(107,142,127,0.15),
+    0 1px 0 rgba(255,255,255,0.9) inset;
+  transition: all 0.3s ease;
+}
+
+.brand:hover .logo {
+  transform: scale(1.05);
+  box-shadow: 
+    0 6px 16px rgba(107,142,127,0.22),
+    0 1px 0 rgba(255,255,255,0.9) inset;
 }
 
 .logo img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  padding: 6px;
+  object-fit: cover;
   display: block;
+  /* No padding for the icon version to fill the space */
 }
 
 .brand-text strong {
@@ -233,23 +243,25 @@ a:hover {
 
 /* Cards - zachte schaduwen en lagen */
 .card {
-  background: rgba(255,255,255,0.75);
-  border: 1px solid rgba(107,142,127,0.12);
+  background: 
+    linear-gradient(135deg, rgba(255,255,255,0.85), rgba(250,248,243,0.8));
+  border: 1px solid rgba(107,142,127,0.15);
   border-radius: 20px;
   box-shadow: 
     0 8px 24px rgba(0,0,0,0.04),
     0 2px 8px rgba(107,142,127,0.08),
-    0 1px 0 rgba(255,255,255,0.6) inset;
+    0 1px 0 rgba(255,255,255,0.7) inset;
   padding: 28px;
   transition: all 0.3s ease;
 }
 
 .card:hover {
   box-shadow: 
-    0 12px 32px rgba(0,0,0,0.06),
-    0 4px 12px rgba(107,142,127,0.12),
-    0 1px 0 rgba(255,255,255,0.6) inset;
+    0 12px 32px rgba(0,0,0,0.07),
+    0 4px 12px rgba(107,142,127,0.15),
+    0 1px 0 rgba(255,255,255,0.7) inset;
   transform: translateY(-2px);
+  border-color: rgba(107,142,127,0.22);
 }
 
 .section-card {
@@ -259,6 +271,27 @@ a:hover {
 /* Hero - warm welkom */
 .hero {
   padding: 56px 0 40px;
+  position: relative;
+}
+
+/* Optionele decoratieve logo achtergrond in hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: 5%;
+  width: 280px;
+  height: 280px;
+  background: 
+    radial-gradient(circle at center, rgba(139,169,129,0.08), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero .wrap {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-grid {
@@ -268,665 +301,30 @@ a:hover {
   align-items: start;
 }
 
-.hero-main {
-  padding: 32px;
-}
-
-.kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: var(--muted);
-  padding: 0;
-  border: 0;
-  background: transparent;
-  margin-bottom: 16px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--sage), var(--petrol));
-  box-shadow: 0 0 0 5px rgba(107,142,127,0.15);
-  animation: pulse 3s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
-.lead {
-  font-size: 19px;
-  line-height: 1.7;
-  color: rgba(45,53,50,0.85);
-  max-width: 65ch;
-  margin-bottom: 24px;
-}
-
-/* CTAs - uitnodigend */
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 20px;
-  border-radius: 12px;
-  font-weight: 500;
-  border: none;
-  background: rgba(255,255,255,0.7);
-  border: 1px solid rgba(107,142,127,0.2);
-  color: var(--ink);
-  transition: all 0.2s ease;
-}
-
-.btn:hover {
-  background: rgba(107,142,127,0.12);
-  border-color: rgba(107,142,127,0.3);
-  transform: translateY(-1px);
-}
-
-.btn.primary {
-  background: linear-gradient(135deg, var(--sage), var(--petrol));
-  color: white;
-  border: none;
-}
-
-.btn.primary:hover {
-  background: linear-gradient(135deg, #5d7d6f, #3d6877);
-  box-shadow: 0 4px 12px rgba(74,124,140,0.25);
-}
-
-/* Divider */
-.divider {
-  height: 1px;
-  border: 0;
-  background: linear-gradient(90deg, transparent, rgba(107,142,127,0.3), transparent);
-  margin: 24px 0;
-}
-
-.fineprint {
-  margin: 0;
-  font-size: 14px;
-  color: var(--muted);
-  max-width: 75ch;
-  line-height: 1.6;
-}
-
-/* Hero Side - uitnodigende kaart */
+/* Optioneel: decoratief logo in hero-side */
 .hero-side {
   padding: 24px;
   border-left: none;
-}
-
-.side-block {
-  margin-bottom: 20px;
-}
-
-.side-block h2 {
-  margin: 0 0 8px;
-  font-size: 15px;
-  letter-spacing: 0.2px;
-  color: var(--ink);
-}
-
-.side-block p {
-  margin: 0 0 12px;
-  font-size: 14px;
-  color: rgba(45,53,50,0.75);
-  line-height: 1.6;
-}
-
-/* Pills verbergen */
-.pill-row { display: none; }
-.pill { display: none; }
-
-/* Columns */
-.cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  align-items: start;
-}
-
-.cols > div {
-  background: rgba(255,255,255,0.6);
-  border: 1px solid rgba(107,142,127,0.12);
-  border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
-}
-
-/* Lists */
-.list {
-  margin: 16px 0 0;
-  padding-left: 24px;
-}
-
-.list li {
-  margin: 10px 0;
-  line-height: 1.6;
-}
-
-/* Notice - vriendelijke opmerking */
-.notice {
-  border-left: 4px solid var(--sage);
-  padding: 14px 0 14px 18px;
-  background: rgba(107,142,127,0.05);
-  border-radius: 0 8px 8px 0;
-  margin-top: 20px;
-  color: rgba(45,53,50,0.8);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* Vijf Eiken - BIJZONDERE SECTIE */
-#vijf-eiken {
-  background: 
-    radial-gradient(ellipse 800px 500px at 50% 30%, rgba(107,142,127,0.08), transparent 70%),
-    rgba(255,255,255,0.3);
-  padding: 56px 0;
-}
-
-#vijf-eiken .section-card {
-  background: 
-    radial-gradient(600px 400px at 20% 20%, rgba(107,142,127,0.12), transparent 65%),
-    radial-gradient(600px 400px at 80% 15%, rgba(74,124,140,0.10), transparent 65%),
-    rgba(255,255,255,0.7);
-  border: 1px solid rgba(107,142,127,0.15);
-  border-radius: 24px;
-  box-shadow: 
-    0 16px 40px rgba(0,0,0,0.06),
-    0 4px 12px rgba(107,142,127,0.1);
-  padding: 36px 32px;
-}
-
-.eiken {
-  width: min(840px, 100%);
-  margin: 24px auto 0;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
-}
-
-/* Intro kaart (eerste) - full width */
-.eiken > .eik:first-child {
-  grid-column: 1 / -1;
-  background: rgba(255,255,255,0.8);
-  border: 1px solid rgba(107,142,127,0.15);
-  border-radius: 18px;
-  padding: 20px 24px;
-  box-shadow: 0 4px 16px rgba(107,142,127,0.08);
-}
-
-/* De 5 echte eiken: 3 boven, 2 onder */
-.eiken > .eik:nth-child(2),
-.eiken > .eik:nth-child(3),
-.eiken > .eik:nth-child(4) {
-  grid-column: span 4;
-}
-
-.eiken > .eik:nth-child(5),
-.eiken > .eik:nth-child(6) {
-  grid-column: span 6;
-}
-
-/* Eiken kaarten styling */
-.eiken > .eik:nth-child(n+2) {
-  padding: 22px 20px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.85);
-  border: 1px solid rgba(107,142,127,0.12);
-  box-shadow: 
-    0 8px 20px rgba(0,0,0,0.04),
-    0 2px 6px rgba(107,142,127,0.08);
-  transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
 }
 
-.eiken > .eik:nth-child(n+2):hover {
-  transform: translateY(-3px);
+.hero-logo-display {
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto 28px;
+  border-radius: 20px;
+  overflow: hidden;
   box-shadow: 
-    0 12px 28px rgba(0,0,0,0.08),
-    0 4px 12px rgba(107,142,127,0.15);
+    0 12px 32px rgba(107,142,127,0.18),
+    0 4px 12px rgba(0,0,0,0.08);
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(250,248,243,0.85));
+  border: 2px solid rgba(107,142,127,0.15);
 }
 
-/* Subtiel kleuraccent per eik */
-.eiken > .eik:nth-child(n+2)::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--sage), var(--petrol));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.eiken > .eik:nth-child(n+2):hover::before {
-  opacity: 0.7;
-}
-
-.eik strong {
-  display: block;
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  letter-spacing: 0.1px;
-  color: var(--ink);
-  position: relative;
-  padding-left: 14px;
-}
-
-.eik strong::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.4em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--sage), var(--petrol));
-  box-shadow: 0 0 0 4px rgba(107,142,127,0.12);
-}
-
-.eik span {
-  display: block;
-  font-size: 14px;
-  line-height: 1.65;
-  color: rgba(45,53,50,0.75);
-}
-
-/* Contact */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 28px;
-  align-items: start;
-}
-
-.contact-line {
-  margin: 0 0 12px;
-  font-size: 16px;
-}
-
-/* Footer */
-.site-footer {
-  padding: 40px 0 56px;
-  border-top: 1px solid rgba(107,142,127,0.15);
-  background: rgba(255,255,255,0.3);
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.footer-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-links {
-  display: flex;
-  gap: 20px;
-}
-
-.footer-links a {
-  color: rgba(45,53,50,0.7);
-  border: none;
-}
-
-.footer-links a:hover {
-  color: var(--petrol);
-}
-
-/* Responsive */
-@media (max-width: 860px) {
-  .hero-grid { 
-    grid-template-columns: 1fr; 
-  }
-  
-  .hero-side {
-    border-left: 0;
-    padding-left: 0;
-    border-top: 1px solid rgba(107,142,127,0.12);
-    padding-top: 20px;
-  }
-  
-  .cols { 
-    grid-template-columns: 1fr; 
-  }
-  
-  .contact-grid { 
-    grid-template-columns: 1fr; 
-  }
-  
-  .eiken {
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-  
-  .eiken > .eik:first-child {
-    grid-column: 1 / -1;
-  }
-  
-  .eiken > .eik:nth-child(n+2) {
-    grid-column: auto;
-  }
-  
-  .nav { 
-    justify-content: flex-start; 
-  }
-}
-
-@media (max-width: 520px) {
-  .topbar { 
-    flex-direction: column; 
-    align-items: flex-start; 
-  }
-  
-  .eiken { 
-    grid-template-columns: 1fr; 
-  }
-  
-  .wrap {
-    padding: 0 20px;
-  }
-  
-  .section {
-    padding: 36px 0;
-  }
-  
-  .hero {
-    padding: 40px 0 32px;
-  }
-  
-  h1 {
-    font-size: clamp(28px, 8vw, 36px);
-  }
-  
-  .card,
-  .section-card {
-    padding: 24px 20px;
-  }
-}/* =========================
-   De Vijf Eikenbomen
-   Warm, uitnodigend, therapeutisch
-   ========================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
-
-:root {
-  /* Warmere kleuren - natuur & rust */
-  --sage: #6b8e7f;           /* zacht groen (eikenbladeren) */
-  --petrol: #4a7c8c;         /* rustgevend petrol */
-  --terracotta: #d4a574;     /* warme aarde-toon */
-  --cream: #faf8f3;          /* warme achtergrond */
-  --paper: #ffffff;
-  --ink: #2d3532;
-  --muted: rgba(45,53,50,0.65);
-  --line: rgba(45,53,50,0.10);
-
-  /* Accenten */
-  --accent: var(--petrol);
-  --accent-soft: rgba(74,124,140,0.12);
-  --sage-soft: rgba(107,142,127,0.12);
-
-  --max: 980px;
-  --radius: 16px;
-}
-
-/* Base - warmere typografie */
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-
-body {
-  margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: var(--ink);
-  background: 
-    radial-gradient(ellipse 1000px 600px at 15% 0%, rgba(107,142,127,0.15), transparent 70%),
-    radial-gradient(ellipse 900px 550px at 88% 8%, rgba(74,124,140,0.12), transparent 70%),
-    linear-gradient(180deg, #faf8f3 0%, #f5f2eb 50%, #faf8f3 100%);
-  background-attachment: fixed;
-}
-
-/* Koppen - warmer, menselijker */
-h1, h2, h3 {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 500;
-  letter-spacing: -0.3px;
-  color: var(--ink);
-}
-
-h1 {
-  margin: 0 0 16px;
-  font-size: clamp(32px, 4vw, 48px);
-  line-height: 1.15;
-}
-
-h2 {
-  margin: 0 0 12px;
-  font-size: 22px;
-  line-height: 1.3;
-}
-
-p { margin: 0 0 16px; }
-
-/* Links - warmer en uitnodigender */
-a {
-  color: var(--petrol);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(74,124,140,0.3);
-  transition: all 0.2s ease;
-}
-
-a:hover {
-  color: #3d6877;
-  border-bottom-color: rgba(74,124,140,0.7);
-}
-
-/* Container */
-.wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* Skip link */
-.skip {
-  position: absolute;
-  left: -999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.skip:focus {
-  left: 24px;
-  top: 20px;
-  width: auto;
+.hero-logo-display img {
+  width: 100%;
   height: auto;
-  padding: 12px 16px;
-  background: var(--paper);
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  z-index: 999;
-}
-
-/* Header - zachter en warmer */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(250,248,243,0.95);
-  border-bottom: 1px solid rgba(107,142,127,0.15);
-  backdrop-filter: blur(12px);
-}
-
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 14px 0;
-}
-
-/* Brand - meer ruimte en warmte */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  text-decoration: none;
-  color: inherit;
-  border: none;
-}
-
-.logo {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  border: 1px solid rgba(107,142,127,0.2);
-  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(250,248,243,0.8));
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(107,142,127,0.12);
-}
-
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 6px;
   display: block;
-}
-
-.brand-text strong {
-  display: block;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  line-height: 1.2;
-  color: var(--ink);
-}
-
-.brand-text span {
-  display: block;
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 2px;
-  line-height: 1.2;
-}
-
-/* Navigatie - uitnodigender */
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.nav a {
-  font-size: 14px;
-  color: rgba(45,53,50,0.75);
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: none;
-  background: rgba(255,255,255,0.5);
-  transition: all 0.2s ease;
-}
-
-.nav a:hover {
-  color: var(--ink);
-  background: rgba(107,142,127,0.15);
-}
-
-/* Utilities */
-.muted { color: var(--muted); }
-.small { font-size: 14px; color: var(--muted); }
-
-/* Sections */
-.section {
-  padding: 48px 0;
-  position: relative;
-}
-
-.section:not(:first-of-type) {
-  border-top: 1px solid rgba(107,142,127,0.12);
-}
-
-.section-title {
-  margin: 0 0 16px;
-  font-size: 20px;
-  letter-spacing: -0.2px;
-  position: relative;
-  display: inline-block;
-  padding-bottom: 8px;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--sage), var(--petrol));
-  border-radius: 2px;
-  opacity: 0.6;
-}
-
-/* Cards - zachte schaduwen en lagen */
-.card {
-  background: rgba(255,255,255,0.75);
-  border: 1px solid rgba(107,142,127,0.12);
-  border-radius: 20px;
-  box-shadow: 
-    0 8px 24px rgba(0,0,0,0.04),
-    0 2px 8px rgba(107,142,127,0.08),
-    0 1px 0 rgba(255,255,255,0.6) inset;
-  padding: 28px;
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 
-    0 12px 32px rgba(0,0,0,0.06),
-    0 4px 12px rgba(107,142,127,0.12),
-    0 1px 0 rgba(255,255,255,0.6) inset;
-  transform: translateY(-2px);
-}
-
-.section-card {
-  padding: 32px;
-}
-
-/* Hero - warm welkom */
-.hero {
-  padding: 56px 0 40px;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
-  gap: 32px;
-  align-items: start;
 }
 
 .hero-main {
@@ -1057,11 +455,23 @@ a:hover {
 }
 
 .cols > div {
-  background: rgba(255,255,255,0.6);
-  border: 1px solid rgba(107,142,127,0.12);
+  background: 
+    linear-gradient(135deg, rgba(255,255,255,0.75), rgba(250,248,243,0.7));
+  border: 1px solid rgba(107,142,127,0.15);
   border-radius: 18px;
   padding: 24px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+  box-shadow: 
+    0 6px 20px rgba(0,0,0,0.04),
+    0 1px 0 rgba(255,255,255,0.7) inset;
+  transition: all 0.3s ease;
+}
+
+.cols > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 28px rgba(0,0,0,0.06),
+    0 2px 8px rgba(107,142,127,0.12);
+  border-color: rgba(107,142,127,0.22);
 }
 
 /* Lists */
@@ -1090,120 +500,211 @@ a:hover {
 /* Vijf Eiken - BIJZONDERE SECTIE */
 #vijf-eiken {
   background: 
-    radial-gradient(ellipse 800px 500px at 50% 30%, rgba(107,142,127,0.08), transparent 70%),
-    rgba(255,255,255,0.3);
-  padding: 56px 0;
+    radial-gradient(ellipse 1200px 700px at 50% 30%, rgba(107,142,127,0.12), transparent 70%),
+    linear-gradient(180deg, rgba(250,248,243,0.5) 0%, rgba(255,255,255,0.8) 100%);
+  padding: 64px 0;
+  position: relative;
+}
+
+/* Subtiele boom decoratie achtergrond (optioneel) */
+#vijf-eiken::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse 400px 400px at 15% 20%, rgba(139,169,129,0.08), transparent 60%),
+    radial-gradient(ellipse 350px 350px at 85% 30%, rgba(139,169,129,0.08), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#vijf-eiken .wrap {
+  position: relative;
+  z-index: 1;
 }
 
 #vijf-eiken .section-card {
   background: 
-    radial-gradient(600px 400px at 20% 20%, rgba(107,142,127,0.12), transparent 65%),
-    radial-gradient(600px 400px at 80% 15%, rgba(74,124,140,0.10), transparent 65%),
-    rgba(255,255,255,0.7);
-  border: 1px solid rgba(107,142,127,0.15);
-  border-radius: 24px;
+    radial-gradient(600px 400px at 20% 20%, rgba(139,169,129,0.15), transparent 65%),
+    radial-gradient(600px 400px at 80% 15%, rgba(107,142,127,0.12), transparent 65%),
+    linear-gradient(135deg, rgba(255,255,255,0.9), rgba(250,248,243,0.8));
+  border: 1px solid rgba(107,142,127,0.2);
+  border-radius: 28px;
   box-shadow: 
-    0 16px 40px rgba(0,0,0,0.06),
-    0 4px 12px rgba(107,142,127,0.1);
-  padding: 36px 32px;
+    0 20px 50px rgba(0,0,0,0.08),
+    0 8px 20px rgba(107,142,127,0.15),
+    0 2px 0 rgba(255,255,255,0.8) inset;
+  padding: 40px 36px;
 }
 
 .eiken {
-  width: min(840px, 100%);
-  margin: 24px auto 0;
+  width: min(900px, 100%);
+  margin: 28px auto 0;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 18px;
 }
 
-/* Intro kaart (eerste) - full width */
+/* Intro kaart (eerste) - full width met meer prominence */
 .eiken > .eik:first-child {
   grid-column: 1 / -1;
-  background: rgba(255,255,255,0.8);
-  border: 1px solid rgba(107,142,127,0.15);
-  border-radius: 18px;
-  padding: 20px 24px;
-  box-shadow: 0 4px 16px rgba(107,142,127,0.08);
+  background: linear-gradient(135deg, rgba(139,169,129,0.18), rgba(107,142,127,0.12));
+  border: 2px solid rgba(107,142,127,0.25);
+  border-radius: 20px;
+  padding: 24px 28px;
+  box-shadow: 
+    0 8px 24px rgba(107,142,127,0.15),
+    0 1px 0 rgba(255,255,255,0.9) inset;
+  text-align: center;
 }
 
-/* De 5 echte eiken: 3 boven, 2 onder */
+.eiken > .eik:first-child strong {
+  font-size: 16px;
+  color: var(--ink);
+  padding-left: 0;
+}
+
+.eiken > .eik:first-child strong::before {
+  display: none;
+}
+
+/* De 5 echte eiken: 3 boven (smaller), 2 onder (wider) */
 .eiken > .eik:nth-child(2),
 .eiken > .eik:nth-child(3),
 .eiken > .eik:nth-child(4) {
-  grid-column: span 4;
+  grid-column: span 3; /* smaller cards */
+}
+
+.eiken > .eik:nth-child(2) { 
+  grid-column: 1 / 4; 
+}
+.eiken > .eik:nth-child(3) { 
+  grid-column: 4 / 7; 
+}
+.eiken > .eik:nth-child(4) { 
+  grid-column: 8 / 11; 
 }
 
 .eiken > .eik:nth-child(5),
 .eiken > .eik:nth-child(6) {
-  grid-column: span 6;
+  grid-column: span 5; /* wider cards */
 }
 
-/* Eiken kaarten styling */
+.eiken > .eik:nth-child(5) { 
+  grid-column: 1 / 6; 
+}
+.eiken > .eik:nth-child(6) { 
+  grid-column: 6 / 11; 
+}
+
+/* Eiken kaarten styling - more refined */
 .eiken > .eik:nth-child(n+2) {
-  padding: 22px 20px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.85);
-  border: 1px solid rgba(107,142,127,0.12);
+  padding: 26px 22px 24px;
+  border-radius: 20px;
+  background: 
+    linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,248,243,0.9));
+  border: 1.5px solid rgba(107,142,127,0.18);
   box-shadow: 
-    0 8px 20px rgba(0,0,0,0.04),
-    0 2px 6px rgba(107,142,127,0.08);
-  transition: all 0.3s ease;
+    0 10px 30px rgba(0,0,0,0.06),
+    0 4px 10px rgba(107,142,127,0.12),
+    0 1px 0 rgba(255,255,255,0.9) inset;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
 }
 
 .eiken > .eik:nth-child(n+2):hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.02);
   box-shadow: 
-    0 12px 28px rgba(0,0,0,0.08),
-    0 4px 12px rgba(107,142,127,0.15);
+    0 16px 40px rgba(0,0,0,0.10),
+    0 8px 20px rgba(107,142,127,0.20),
+    0 1px 0 rgba(255,255,255,0.9) inset;
+  border-color: rgba(107,142,127,0.30);
 }
 
-/* Subtiel kleuraccent per eik */
+/* Subtiele top accent bar */
 .eiken > .eik:nth-child(n+2)::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--sage), var(--petrol));
+  height: 4px;
+  background: linear-gradient(90deg, 
+    rgba(139,169,129,0.6), 
+    rgba(107,142,127,0.7),
+    rgba(74,124,140,0.6));
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
+  border-radius: 20px 20px 0 0;
 }
 
 .eiken > .eik:nth-child(n+2):hover::before {
-  opacity: 0.7;
+  opacity: 1;
+}
+
+/* Subtle side accent */
+.eiken > .eik:nth-child(n+2)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 3px;
+  background: linear-gradient(180deg, 
+    rgba(139,169,129,0.5), 
+    rgba(107,142,127,0.6));
+  border-radius: 0 3px 3px 0;
+  opacity: 0;
+  transform: translateX(-3px);
+  transition: all 0.35s ease;
+}
+
+.eiken > .eik:nth-child(n+2):hover::after {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .eik strong {
   display: block;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   letter-spacing: 0.1px;
   color: var(--ink);
   position: relative;
-  padding-left: 14px;
+  padding-left: 18px;
+  line-height: 1.4;
 }
 
 .eik strong::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 0.4em;
-  width: 6px;
-  height: 6px;
+  top: 0.45em;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--sage), var(--petrol));
-  box-shadow: 0 0 0 4px rgba(107,142,127,0.12);
+  background: linear-gradient(135deg, 
+    rgba(139,169,129,0.9), 
+    rgba(107,142,127,0.9));
+  box-shadow: 0 0 0 5px rgba(107,142,127,0.15);
 }
 
 .eik span {
   display: block;
-  font-size: 14px;
-  line-height: 1.65;
-  color: rgba(45,53,50,0.75);
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(45,53,50,0.78);
+  flex: 1;
 }
 
 /* Contact */
@@ -1256,6 +757,15 @@ a:hover {
     grid-template-columns: 1fr; 
   }
   
+  .hero::before {
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  .hero-logo-display {
+    max-width: 200px;
+  }
+  
   .hero-side {
     border-left: 0;
     padding-left: 0;
@@ -1281,7 +791,12 @@ a:hover {
     grid-column: 1 / -1;
   }
   
-  .eiken > .eik:nth-child(n+2) {
+  /* Stack 5 oaks in 2 columns on tablet */
+  .eiken > .eik:nth-child(2),
+  .eiken > .eik:nth-child(3),
+  .eiken > .eik:nth-child(4),
+  .eiken > .eik:nth-child(5),
+  .eiken > .eik:nth-child(6) {
     grid-column: auto;
   }
   
@@ -1296,6 +811,15 @@ a:hover {
     align-items: flex-start; 
   }
   
+  .hero::before {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hero-logo-display {
+    max-width: 160px;
+  }
+  
   .eiken { 
     grid-template-columns: 1fr; 
   }
@@ -1306,6 +830,10 @@ a:hover {
   
   .section {
     padding: 36px 0;
+  }
+  
+  #vijf-eiken {
+    padding: 48px 0;
   }
   
   .hero {
@@ -1319,5 +847,14 @@ a:hover {
   .card,
   .section-card {
     padding: 24px 20px;
+  }
+  
+  #vijf-eiken .section-card {
+    padding: 28px 22px;
+  }
+  
+  .eiken > .eik:nth-child(n+2) {
+    padding: 22px 18px 20px;
+    min-height: auto;
   }
 }
