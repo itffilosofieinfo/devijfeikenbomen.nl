@@ -43,6 +43,10 @@ a:hover{ text-decoration-thickness:2px; }
 }
 
 /* Header */
+.header-inner { display: flex; align-items: center; }
+.brand { display: inline-flex; align-items: center; text-decoration: none; }
+.brand-logo { height: 56px; width: auto; display: block; }
+
 .site-header{
   position:sticky;
   top:0;
