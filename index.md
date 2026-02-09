@@ -12,7 +12,7 @@ permalink: /
     <div class="topbar">
       <a class="brand" href="#top" aria-label="Naar boven">
         <div class="logo" aria-hidden="true">
-          <img src="{{ '/assets/images/devijfeikenbomen-logo-square.png' | relative_url }}" alt="De Vijf Eikenbomen">
+          <img src="{{ '/assets/images/devijfeikenbomen-icon.png' | relative_url }}" alt="De Vijf Eikenbomen">
         </div>
         <div class="brand-text">
           <strong>De vijf eikenbomen</strong>
@@ -63,15 +63,14 @@ Soms loop ik ook mee in de fase van het sterven zelf, als dat passend is.
         </div>
 
         <aside class="card hero-side" aria-label="Korte wegwijzer">
+          <!-- NIEUW: Decoratief logo bovenaan -->
+          <div class="hero-logo-display">
+            <img src="{{ '/assets/images/devijfeikenbomen-logo-horiz.png' | relative_url }}" alt="De vijf eikenbomen">
+          </div>
+
           <div class="side-block">
             <h2>Waar mensen vaak mee komen</h2>
-            <p>Onrust, vragen, verdriet, angst, vermoeidheid. Of juist: “Ik wil het niet alleen doen.”</p>
-            <div class="pill-row">
-              <span class="pill">gesprek</span>
-              <span class="pill">stilte</span>
-              <span class="pill">nabijheid</span>
-              <span class="pill">naasten</span>
-            </div>
+            <p>Onrust, vragen, verdriet, angst, vermoeidheid. Of juist: "Ik wil het niet alleen doen."</p>
           </div>
 
           <div class="side-block">
@@ -145,40 +144,54 @@ Ik ben er niet om het te verzachten of te verklaren, maar om mee te lopen en het
     </div>
   </section>
 
- <div class="eiken" role="list">
- <h2 class="section-title">De vijf eikenbomen</h2>
-<p class="muted">
-De naam is geen beeldspraak, maar een werkwijze.  
-Vijf aandachtspunten die richting geven in gesprekken en aanwezigheid wanneer het einde nabij is.
-</p>
+  <!-- AANGEPAST: Vijf eikenbomen sectie nu met correcte structuur -->
+  <section id="vijf-eiken" class="section">
+    <div class="wrap">
+      <div class="section-card">
+        <h2 class="section-title">De vijf eikenbomen</h2>
+        <p class="muted">
+          De naam is geen beeldspraak, maar een werkwijze.  
+          Vijf aandachtspunten die richting geven in gesprekken en aanwezigheid wanneer het einde nabij is.
+        </p>
 
-  <div class="eik" role="listitem">
-    <strong>Aandacht</strong>
-    <span>Stilstaan bij wat zich aandient, zonder het te hoeven oplossen of verklaren.</span>
-  </div>
+        <div class="eiken" role="list">
+          <!-- Intro kaart (optioneel - verwijder deze als je hem niet wilt) -->
+          <div class="eik" role="listitem">
+            <strong>De naam is geen beeldspraak</strong>
+            <span>
+              Deze vijf 'eikenbomen' vormen de kern van mijn werkwijze: aandachtspunten die richting geven zonder een stappenplan te worden.
+            </span>
+          </div>
 
-  <div class="eik" role="listitem">
-    <strong>Tijd</strong>
-    <span>Vertragen. Niet vooruit hoeven kijken, maar aanwezig zijn bij wat er nu is.</span>
-  </div>
+          <!-- De 5 eiken -->
+          <div class="eik" role="listitem">
+            <strong>Aandacht</strong>
+            <span>Stilstaan bij wat zich aandient, zonder het te hoeven oplossen of verklaren.</span>
+          </div>
 
-  <div class="eik" role="listitem">
-    <strong>Stilte</strong>
-    <span>Ruimte laten waar woorden ontbreken of te zwaar zijn.</span>
-  </div>
+          <div class="eik" role="listitem">
+            <strong>Tijd</strong>
+            <span>Vertragen. Niet vooruit hoeven kijken, maar aanwezig zijn bij wat er nu is.</span>
+          </div>
 
-  <div class="eik" role="listitem">
-    <strong>Betekenis</strong>
-    <span>Stilstaan bij wat geleefd is, en bij wat nog gezegd of afgerond wil worden.</span>
-  </div>
+          <div class="eik" role="listitem">
+            <strong>Stilte</strong>
+            <span>Ruimte laten waar woorden ontbreken of te zwaar zijn.</span>
+          </div>
 
-  <div class="eik" role="listitem">
-    <strong>Verbondenheid</strong>
-    <span>Aandacht voor de relatie met jezelf, met anderen, en met wat overstijgt.</span>
-  </div>
+          <div class="eik" role="listitem">
+            <strong>Betekenis</strong>
+            <span>Stilstaan bij wat geleefd is, en bij wat nog gezegd of afgerond wil worden.</span>
+          </div>
 
-</div>
-
+          <div class="eik" role="listitem">
+            <strong>Verbondenheid</strong>
+            <span>Aandacht voor de relatie met jezelf, met anderen, en met wat overstijgt.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="praktisch" class="section">
     <div class="wrap">
@@ -213,7 +226,7 @@ Vijf aandachtspunten die richting geven in gesprekken en aanwezigheid wanneer he
           <div>
             <p>Als je wilt, kun je me een bericht sturen. Je hoeft niet precies te weten wat je nodig hebt.</p>
             <p class="contact-line"><strong>E-mail</strong>: <a href="mailto:nmvhooff@gmail.com">nmvhooff@gmail.com</a></p>
-            <p class="contact-line"><strong>Telefoon</strong>: <a href="tel:+31646647313">+31646647313</a></p>
+            <p class="contact-line"><strong>Telefoon</strong>: <a href="tel:+31646647313">06-46647313</a></p>
             <div class="notice">Als je liever eerst alleen even aftast: stuur gerust één zin. Ik reageer zo snel als passend is.</div>
           </div>
 
@@ -223,7 +236,7 @@ Vijf aandachtspunten die richting geven in gesprekken en aanwezigheid wanneer he
               Ik ben Nathalie van Hooff. Ik begeleid mensen en hun naasten in de palliatieve fase.
               Mijn stijl is rustig en dichtbij: luisteren, vertragen, en samen kijken wat er nog gezegd of gedaan wil worden.
             </p>
-            <p class="muted small">Tip: als je een foto wilt, kies er één die “ademt”: buitenlicht, rustig, geen stock-glimlach.</p>
+            <p class="muted small">Tip: als je een foto wilt, kies er één die "ademt": buitenlicht, rustig, geen stock-glimlach.</p>
           </div>
         </div>
       </div>
