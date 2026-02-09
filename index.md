@@ -38,14 +38,15 @@ permalink: /
         <div class="card hero-main">
           <div class="kicker">
             <span class="dot" aria-hidden="true"></span>
-            Rustige aanwezigheid wanneer het leven stiller wordt
+            Rustige aanwezigheid wanneer iemand hoort dat het leven eindig is.
           </div>
 
-          <h1>Meelopen in een kwetsbare fase.</h1>
+          <h1>Meelopen wanneer de tijd kantelt</h1>
 
           <p class="lead">
-            Soms is er niets dat “opgelost” hoeft te worden, maar wél iets dat gedragen mag worden.
-            Ik bied palliatieve begeleiding in Zweeloo en omgeving: aanwezigheid, gesprek en steun – voor wie sterft én voor wie achterblijft.
+            Dat moment waarop iemand te horen krijgt dat het einde dichterbij komt, verandert alles.
+Vragen dienen zich aan, relaties verschuiven, woorden kunnen te veel of te weinig zijn.
+Ik bied palliatieve begeleiding in Zweeloo en omgeving: nabijheid, gesprek en steun – voor wie dit hoort, en voor wie naast hen staat.
           </p>
 
           <div class="cta-row">
@@ -123,10 +124,9 @@ permalink: /
         <div class="cols">
           <div>
             <p>
-              In de palliatieve fase verschuift het leven. Tijd wordt anders, relaties worden voelbaarder,
-              woorden kunnen schaars worden – of juist heel belangrijk.
-            </p>
-            <p>Mijn rol is niet om het lichter te maken, maar om het samen draaglijk te maken.</p>
+              Vanaf het moment dat iemand hoort dat het einde naderbij komt, verandert het leven van toon.
+Tijd voelt anders, relaties worden intenser, en wat gezegd moet worden laat zich niet altijd gemakkelijk uitspreken.
+Ik ben er niet om het te verzachten of te verklaren, maar om mee te lopen en het samen draaglijk te maken.</p>
           </div>
 
           <div>
@@ -137,29 +137,47 @@ permalink: /
               <li>Ritueel of vorm geven aan afscheid, op een manier die past</li>
             </ul>
 
-            <div class="notice">Je hoeft niet “sterk” te zijn om contact op te nemen. Een zin is genoeg.</div>
+            <div class="notice">Neem gerust contact op.</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="vijf-eiken" class="section">
-    <div class="wrap">
-      <div class="card section-card">
-        <h2 class="section-title">De vijf eiken</h2>
-        <p class="muted">De naam is een klein kompas. Vijf woorden die vaak terugkomen als het einde nabij is.</p>
+ <div class="eiken" role="list">
+ <h2 class="section-title">De vijf eikenbomen</h2>
+<p class="muted">
+De naam is geen beeldspraak, maar een werkwijze.  
+Vijf aandachtspunten die richting geven in gesprekken en aanwezigheid wanneer het einde nabij is.
+</p>
 
-        <div class="eiken" role="list">
-          <div class="eik" role="listitem"><strong>Aandacht</strong><span>Er mogen dingen bestaan zonder opgelost te worden.</span></div>
-          <div class="eik" role="listitem"><strong>Tijd</strong><span>Vertragen, zonder haast. Kijken wat er nú is.</span></div>
-          <div class="eik" role="listitem"><strong>Stilte</strong><span>Niet alles hoeft in woorden. Soms is nabijheid genoeg.</span></div>
-          <div class="eik" role="listitem"><strong>Betekenis</strong><span>Wat was waardevol? Wat wil je nalaten, of loslaten?</span></div>
-          <div class="eik" role="listitem"><strong>Verbondenheid</strong><span>Met jezelf, met anderen, met wat groter is dan jij.</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="eik" role="listitem">
+    <strong>Aandacht</strong>
+    <span>Stilstaan bij wat zich aandient, zonder het te hoeven oplossen of verklaren.</span>
+  </div>
+
+  <div class="eik" role="listitem">
+    <strong>Tijd</strong>
+    <span>Vertragen. Niet vooruit hoeven kijken, maar aanwezig zijn bij wat er nu is.</span>
+  </div>
+
+  <div class="eik" role="listitem">
+    <strong>Stilte</strong>
+    <span>Ruimte laten waar woorden ontbreken of te zwaar zijn.</span>
+  </div>
+
+  <div class="eik" role="listitem">
+    <strong>Betekenis</strong>
+    <span>Stilstaan bij wat geleefd is, en bij wat nog gezegd of afgerond wil worden.</span>
+  </div>
+
+  <div class="eik" role="listitem">
+    <strong>Verbondenheid</strong>
+    <span>Aandacht voor de relatie met jezelf, met anderen, en met wat overstijgt.</span>
+  </div>
+
+</div>
+
 
   <section id="praktisch" class="section">
     <div class="wrap">
@@ -193,15 +211,15 @@ permalink: /
         <div class="contact-grid">
           <div>
             <p>Als je wilt, kun je me een bericht sturen. Je hoeft niet precies te weten wat je nodig hebt.</p>
-            <p class="contact-line"><strong>E-mail</strong>: <a href="mailto:VULHIER@JOUWEMAIL.NL">VULHIER@JOUWEMAIL.NL</a></p>
-            <p class="contact-line"><strong>Telefoon</strong>: <a href="tel:+31VULHIER">+31 VULHIER</a></p>
+            <p class="contact-line"><strong>E-mail</strong>: <a href="mailto:nmvhooff@gmail.com">nmvhooff@gmail.com</a></p>
+            <p class="contact-line"><strong>Telefoon</strong>: <a href="tel:+31646647313">+31646647313</a></p>
             <div class="notice">Als je liever eerst alleen even aftast: stuur gerust één zin. Ik reageer zo snel als passend is.</div>
           </div>
 
           <div>
             <p>
               <strong>Over mij</strong><br>
-              Ik ben [jouw naam]. Ik begeleid mensen en hun naasten in de palliatieve fase.
+              Ik ben Nathalie van Hooff. Ik begeleid mensen en hun naasten in de palliatieve fase.
               Mijn stijl is rustig en dichtbij: luisteren, vertragen, en samen kijken wat er nog gezegd of gedaan wil worden.
             </p>
             <p class="muted small">Tip: als je een foto wilt, kies er één die “ademt”: buitenlicht, rustig, geen stock-glimlach.</p>
