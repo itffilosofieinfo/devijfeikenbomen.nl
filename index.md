@@ -12,7 +12,7 @@ permalink: /
     <div class="topbar">
       <a class="brand" href="#top" aria-label="Naar boven">
         <div class="logo" aria-hidden="true">
-          <img src="{{ '/assets/images/devijfeikenbomen-logo-horiz.png' | relative_url }}" alt="De Vijf Eikenbomen">
+          <img src="{{ '/assets/images/devijfeikenbomen-logo-square.png' | relative_url }}" alt="De Vijf Eikenbomen">
         </div>
         <div class="brand-text">
           <strong>De vijf eikenbomen</strong>
