@@ -316,3 +316,20 @@ h1{
 @media (max-width: 520px){
   .eiken{ grid-template-columns: 1fr; }
 }
+
+
+.brand-logo{
+  display:block !important;
+  height:56px !important;
+  width:auto !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  max-width:240px !important;
+}
+.brand{
+  display:inline-flex !important;
+  align-items:center !important;
+}
+.site-header{
+  overflow:visible !important;
+}
