@@ -23,7 +23,7 @@ permalink: /
       <nav class="nav" aria-label="Hoofdnavigatie">
         <a href="#voor-wie">Voor wie</a>
         <a href="#wat-ik-doe">Wat ik doe</a>
-        <a href="#vijf-eiken">De vijf eiken</a>
+        <a href="#vijf-eiken">De vijf eikenbomen</a>
         <a href="#praktisch">Praktisch</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -46,7 +46,8 @@ permalink: /
           <p class="lead">
             Dat moment waarop iemand te horen krijgt dat het einde dichterbij komt, verandert alles.
 Vragen dienen zich aan, relaties verschuiven, woorden kunnen te veel of te weinig zijn.
-Ik bied palliatieve begeleiding in Zweeloo en omgeving: nabijheid, gesprek en steun – voor wie dit hoort, en voor wie naast hen staat.
+Ik bied palliatieve begeleiding in Zweeloo en omgeving: nabijheid, gesprek en steun – voor wie dit hoort, en voor wie naast hen staat. Mijn begeleiding richt zich vooral op de periode waarin het leven als eindig wordt ervaren.
+Soms loop ik ook mee in de fase van het sterven zelf, als dat passend is.
           </p>
 
           <div class="cta-row">
