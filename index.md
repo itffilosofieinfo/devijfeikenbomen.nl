@@ -43,8 +43,7 @@ permalink: /
           <p class="lead">
             Dat moment waarop iemand te horen krijgt dat het einde dichterbij komt, verandert alles.
 Vragen dienen zich aan, relaties verschuiven, woorden kunnen te veel of te weinig zijn.
-Ik bied palliatieve begeleiding in Zweeloo en omgeving: nabijheid, gesprek en steun – voor wie dit hoort, en voor wie naast hen staat. Mijn begeleiding richt zich vooral op de periode waarin het leven als eindig wordt ervaren.
-Soms loop ik ook mee in de fase van het sterven zelf, als dat passend is.
+Ik bied palliatieve begeleiding in Zweeloo en omgeving: nabijheid, gesprek en steun – voor wie dit hoort, en voor wie naast hen staat. 
           </p>
 
           <div class="cta-row">
@@ -198,7 +197,7 @@ Ik ben er niet om het te verzachten of te verklaren, maar om mee te lopen en het
               We beginnen met een korte kennismaking. Daarna spreken we af wat passend is:
               éénmalig of in een aantal momenten, met ruimte om bij te stellen.
             </p>
-            <p class="muted small">(Hier kun je later iets toevoegen over tarief/vergoeding — of juist bewust niet.)</p>
+            
           </div>
         </div>
       </div>
@@ -222,9 +221,9 @@ Ik ben er niet om het te verzachten of te verklaren, maar om mee te lopen en het
             <p>
               <strong>Over mij</strong><br>
               Ik ben Nathalie van Hooff. Ik begeleid mensen en hun naasten in de palliatieve fase.
-              Mijn stijl is rustig en dichtbij: luisteren, vertragen, en samen kijken wat er nog gezegd of gedaan wil worden.
+              Mijn stijl is rustig en dichtbij: luisteren, vertragen, en samen kijken wat er nog gezegd of gedaan wil worden. Mijn begeleiding richt zich vooral op de periode waarin het leven als eindig wordt ervaren.
+Soms loop ik ook mee in de fase van het sterven zelf, als dat passend is.
             </p>
-            <p class="muted small">Tip: als je een foto wilt, kies er één die "ademt": buitenlicht, rustig, geen stock-glimlach.</p>
           </div>
         </div>
       </div>
