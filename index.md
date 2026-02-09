@@ -36,10 +36,7 @@ permalink: /
     <div class="wrap">
       <div class="hero-grid">
         <div class="card hero-main">
-          <div class="kicker">
-            <span class="dot" aria-hidden="true"></span>
-            Rustige aanwezigheid wanneer iemand hoort dat het leven eindig is.
-          </div>
+          
 
           <h1>Meelopen wanneer de tijd kantelt</h1>
 
