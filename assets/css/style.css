@@ -521,4 +521,644 @@ h1{
 .muted{
   font-family: "Inter", sans-serif;
 }
+:root{
+  /* Stil landschap */
+  --bg: #f8f7f4;
+  --paper: #ffffff;
+  --ink: #1f2321;
+  --muted: rgba(31,35,33,0.68);
+  --line: rgba(31,35,33,0.12);
+
+  /* Accent: vergrijsd blauwgroen */
+  --accent: #4f6f6a;
+  --accent-soft: rgba(79,111,106,0.14);
+
+  --max: 980px;
+  --radius: 14px;
+}
+
+/* Base */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+  line-height:1.65;
+  color:var(--ink);
+  background: var(--bg);
+}
+
+/* Links */
+a{
+  color: var(--accent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+a:hover{ text-decoration-thickness: 2px; }
+
+/* container */
+.wrap{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Skip */
+.skip{
+  position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip:focus{
+  left:20px; top:18px; width:auto; height:auto;
+  padding:10px 12px; background: var(--paper);
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  z-index:999;
+}
+
+/* Header (plat, stil) */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(248,247,244,0.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 18px;
+  padding: 8px 0;
+}
+
+/* Brand */
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  text-decoration:none;
+  color: inherit;
+}
+
+.logo{
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+}
+.logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 5px;
+  display:block;
+}
+
+.brand-text strong{
+  display:block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  line-height: 1.2;
+}
+.brand-text span{
+  display:block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 1px;
+  line-height: 1.2;
+}
+
+/* Nav: rustig, dun, geen pillen */
+.nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px 14px;
+  justify-content:flex-end;
+  align-items:center;
+}
+.nav a{
+  font-size: 13px;
+  color: rgba(31,35,33,0.78);
+  text-decoration:none;
+  padding: 6px 0;          /* geen “knoppen” */
+  border-radius: 0;
+  border-bottom: 1px solid transparent;
+}
+.nav a:hover{
+  color: var(--ink);
+  border-bottom-color: rgba(79,111,106,0.45);
+}
+
+/* Typografie hiërarchie */
+h1{
+  margin: 0 0 10px;
+  font-weight: 600;
+  font-size: clamp(30px, 3.2vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.3px;
+}
+h2{
+  margin: 0 0 10px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+}
+p{ margin: 0 0 14px; }
+
+.muted{ color: var(--muted); }
+.small{ font-size: 13px; color: var(--muted); }
+
+/* Secties: geen cards, wel ritme + lijnen */
+.section{
+  padding: 34px 0;
+  border-top: 1px solid var(--line);
+}
+.section:first-of-type{ border-top: 0; }
+
+.section-title{
+  margin: 0 0 10px;
+  font-size: 18px;
+  letter-spacing: -0.1px;
+}
+
+/* “Card” classes neutraal maken (zodat je HTML niet hoeft te wijzigen) */
+.card{
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.section-card{
+  padding: 0;              /* we doen spacing met .section */
+}
+
+/* Hero: rust, geen blokken */
+.hero{
+  padding: 42px 0 28px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 26px;
+  align-items:start;
+}
+
+.kicker{
+  display:inline-flex;
+  align-items:center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  margin-bottom: 12px;
+}
+.dot{
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.lead{
+  font-size: 18px;
+  color: rgba(31,35,33,0.84);
+  max-width: 62ch;
+  margin-bottom: 18px;
+}
+
+/* CTA: geen “glossy buttons”, wel rustige links */
+.cta-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 14px;
+  margin-top: 10px;
+}
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  color: var(--accent);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(79,111,106,0.35);
+}
+.btn:hover{ border-bottom-color: rgba(79,111,106,0.75); }
+.btn.primary{
+  color: var(--accent);
+  border-bottom-color: rgba(79,111,106,0.55);
+}
+
+/* Divider / fineprint */
+.divider{
+  height:1px;
+  border:0;
+  background: var(--line);
+  margin: 18px 0;
+}
+.fineprint{
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 75ch;
+}
+
+/* Side blocks (rechter kolom): subtiele “notities” */
+.hero-side{
+  border-left: 1px solid var(--line);
+  padding-left: 18px;
+}
+.side-block h2{
+  margin: 0 0 6px;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+}
+.side-block p{
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: rgba(31,35,33,0.76);
+}
+
+/* Pills: weghalen (te druk) */
+.pill-row{ display:none; }
+.pill{ display:none; }
+
+/* Columns */
+.cols{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items:start;
+}
+
+/* Lists */
+.list{ margin: 12px 0 0; padding-left: 18px; }
+.list li{ margin: 7px 0; }
+
+/* Notice: van “kaart” naar rustige zijlijn */
+.notice{
+  border-left: 3px solid rgba(79,111,106,0.35);
+  padding: 10px 0 10px 14px;
+  background: transparent;
+  border-radius: 0;
+  margin-top: 14px;
+  color: rgba(31,35,33,0.78);
+  font-size: 14px;
+}
+
+/* Five eiken: rustiger grid, meer lucht */
+.eiken{
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+.eik{
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  min-height: auto;
+}
+.eik strong{
+  display:block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.eik span{
+  font-size: 14px;
+  color: rgba(31,35,33,0.74);
+}
+
+/* Contact */
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 22px;
+  align-items:start;
+}
+.contact-line{ margin: 0 0 10px; }
+
+/* Footer */
+.site-footer{
+  padding: 28px 0 44px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+.footer-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+  justify-content:space-between;
+  align-items:center;
+}
+.footer-links a{ color: rgba(31,35,33,0.70); }
+
+/* Responsive */
+@media (max-width: 860px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero-side{ border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 16px; }
+  .cols{ grid-template-columns: 1fr; }
+  .contact-grid{ grid-template-columns: 1fr; }
+  .eiken{ grid-template-columns: 1fr 1fr; }
+  .nav{ justify-content:flex-start; }
+}
+
+@media (max-width: 520px){
+  .topbar{ flex-direction:column; align-items:flex-start; }
+  .eiken{ grid-template-columns: 1fr; }
+}
+/* =========================
+   PATCH 2 — Zacht & uitnodigend
+   Plak onderaan style.css
+   ========================= */
+
+/* 1) Typografie: weg van krant
+   - body: warme humanistische sans
+   - koppen: zachte serif-achtige (maar modern) fallback via system */
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.05px;
+}
+
+h1,h2,h3{
+  font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+/* 2) Meer warmte in achtergrond */
+body{
+  background:
+    radial-gradient(900px 520px at 20% 0%, rgba(79,111,106,0.14), transparent 60%),
+    radial-gradient(900px 520px at 85% 10%, rgba(64,93,122,0.10), transparent 60%),
+    linear-gradient(180deg, #fbfaf6 0%, #f6f3ee 55%, #fbfaf6 100%);
+}
+
+/* 3) Panels: minder “kaart”, meer “kussen” (zacht) */
+.card{
+  background: rgba(255,255,255,0.70);
+  border: 1px solid rgba(31,35,33,0.08);
+  border-radius: 18px;
+  /* zachte gloed i.p.v. harde schaduw */
+  box-shadow:
+    0 10px 28px rgba(0,0,0,0.05),
+    0 1px 0 rgba(255,255,255,0.55) inset;
+}
+
+/* 4) Algemene binnenruimte iets royaler */
+.hero-main{ padding: 24px 24px; }
+.hero-side{ padding: 20px 20px; }
+.section-card{ padding: 22px 22px; }
+
+/* 5) EIKEN “tabel”: echte padding + rustigere regels */
+.eiken{
+  margin-top: 16px;
+  gap: 14px;
+}
+
+/* Dit is je belangrijkste klacht: tekst tegen rand */
+.eik{
+  padding: 18px 18px 16px;      /* ↑ meer lucht rondom */
+  border-radius: 18px;
+  background: rgba(255,255,255,0.62);
+  border: 1px solid rgba(31,35,33,0.08);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+}
+
+.eik strong{
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  margin-bottom: 8px;
+}
+
+.eik span{
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(31,35,33,0.74);
+}
+
+/* 6) Maak de eiken-sectie zelf een “troostende zone”
+   - een zachte achtergrondband achter die sectie */
+#vijf-eiken .section-card{
+  position: relative;
+  padding: 26px 24px;
+}
+
+#vijf-eiken .section-card::before{
+  content:"";
+  position:absolute;
+  inset: -14px -14px -14px -14px;
+  border-radius: 26px;
+  background:
+    radial-gradient(560px 360px at 20% 20%, rgba(79,111,106,0.14), transparent 60%),
+    radial-gradient(560px 360px at 80% 10%, rgba(64,93,122,0.10), transparent 60%),
+    rgba(255,255,255,0.35);
+  z-index: 0;
+  border: 1px solid rgba(31,35,33,0.06);
+}
+
+#vijf-eiken .section-card > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* 7) Minder “krant”: kolommen iets losser en minder strak */
+.cols{
+  gap: 22px;
+}
+.cols > div{
+  background: rgba(255,255,255,0.50);
+  border: 1px solid rgba(31,35,33,0.06);
+  border-radius: 16px;
+  padding: 18px 18px 16px;
+}
+
+/* 8) Nav iets warmer, uitnodigend */
+.nav a{
+  padding: 7px 10px;
+  border-radius: 999px;
+  border-bottom: 0;
+  background: rgba(255,255,255,0.40);
+}
+.nav a:hover{
+  background: rgba(79,111,106,0.12);
+}
+
+/* 9) Kicker/CTA: minder zakelijk */
+.kicker{
+  color: rgba(31,35,33,0.70);
+}
+.btn{
+  border-bottom: 0;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(31,35,33,0.08);
+  border-radius: 14px;
+  padding: 10px 12px;
+  color: rgba(31,35,33,0.85);
+}
+.btn:hover{
+  background: rgba(79,111,106,0.10);
+}
+
+/* =========================
+   Typografie — Fraunces + Inter
+   ========================= */
+
+/* Body: zacht, open, uitnodigend */
+body{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.1px;
+}
+
+/* Koppen: menselijk, warm, niet-krant */
+h1,h2,h3{
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+}
+
+/* Hero-kop iets meer adem */
+h1{
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1.15;
+}
+
+/* Sectiekoppen rustiger */
+.section-title{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Kleine tekst net iets zachter */
+.small,
+.muted{
+  font-family: "Inter", sans-serif;
+}
+/* =========================
+   Vijf eiken: niet breed, wel kern
+   + kleur (vergrijsd groen / petrol)
+   Plak onderaan style.css
+   ========================= */
+
+/* 1) KLEURTHEMA */
+:root{
+  --sage: #6f847a;        /* vergrijsd groen */
+  --petrol: #2f5f68;      /* petrol blauw */
+  --tint: rgba(111,132,122,0.14);
+  --tint2: rgba(47,95,104,0.10);
+}
+
+/* Links + headings krijgen kleur (zacht, niet schreeuwerig) */
+a{ color: var(--petrol); }
+a:hover{ color: #234951; }
+
+h1,h2,h3,.section-title{
+  color: rgba(31,35,33,0.92);
+}
+
+/* subtiele “petrol lijn” onder sectietitels (optioneel mooi) */
+.section-title{
+  position: relative;
+  padding-bottom: 6px;
+}
+.section-title::after{
+  content:"";
+  position:absolute;
+  left:0; bottom:0;
+  width: 54px; height: 2px;
+  border-radius: 2px;
+  background: rgba(47,95,104,0.40);
+}
+
+/* 2) ALGEMENE ACHTERGROND IETS MEER “SAGE” */
+body{
+  background:
+    radial-gradient(900px 520px at 18% 0%, rgba(111,132,122,0.16), transparent 60%),
+    radial-gradient(900px 520px at 85% 10%, rgba(47,95,104,0.12), transparent 60%),
+    linear-gradient(180deg, #fbfaf6 0%, #f2f2ee 55%, #fbfaf6 100%);
+}
+
+/* 3) Vijf-eiken sectie: maak er een compact, gecentreerd blok van */
+#vijf-eiken .wrap{
+  max-width: 920px; /* iets compacter dan de rest */
+}
+
+#vijf-eiken .section-card{
+  background:
+    radial-gradient(560px 360px at 18% 18%, rgba(111,132,122,0.16), transparent 60%),
+    radial-gradient(560px 360px at 85% 10%, rgba(47,95,104,0.12), transparent 60%),
+    rgba(255,255,255,0.55);
+  border: 1px solid rgba(31,35,33,0.07);
+  border-radius: 22px;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.06);
+  padding: 26px 24px;
+}
+
+/* 4) FIX: de eiken-grid niet “full width”, maar in nette compositie */
+#vijf-eiken .eiken{
+  width: min(760px, 100%);     /* <-- dit voorkomt ‘tabel-breedte’ */
+  margin: 16px auto 0;         /* center */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+
+/* 2–3 compositie: boven 3, onder 2 (rustig) */
+#vijf-eiken .eik{ grid-column: span 4; }
+#vijf-eiken .eik:nth-child(4),
+#vijf-eiken .eik:nth-child(5){ grid-column: span 6; }
+
+/* Kaarten: meer padding, meer “kussen”, zachte rand */
+#vijf-eiken .eik{
+  padding: 18px 18px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.74);
+  border: 1px solid rgba(31,35,33,0.08);
+  box-shadow:
+    0 10px 22px rgba(0,0,0,0.05),
+    0 1px 0 rgba(255,255,255,0.55) inset;
+}
+
+/* kleine kleuraccenten per kaart (heel subtiel) */
+#vijf-eiken .eik strong{
+  position: relative;
+  padding-left: 10px;
+}
+#vijf-eiken .eik strong::before{
+  content:"";
+  position:absolute;
+  left:0; top: 0.35em;
+  width:6px; height:6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(47,95,104,0.9), rgba(111,132,122,0.9));
+  box-shadow: 0 0 0 4px rgba(47,95,104,0.10);
+}
+
+/* 5) Introtekst in deze sectie: leesbaarder en compacter */
+#vijf-eiken .muted{
+  max-width: 70ch;
+}
+
+/* Responsive */
+@media (max-width: 860px){
+  #vijf-eiken .eiken{ width: 100%; }
+  #vijf-eiken .eik{ grid-column: span 6; }
+  #vijf-eiken .eik:nth-child(4),
+  #vijf-eiken .eik:nth-child(5){ grid-column: span 6; }
+}
+@media (max-width: 520px){
+  #vijf-eiken .eik{ grid-column: span 12; }
+  .section-title::after{ width: 44px; }
+}
+
 
