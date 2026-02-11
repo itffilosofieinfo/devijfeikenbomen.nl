@@ -1,6 +1,11 @@
 {
   "name": "De vijf eikenbomen",
-  "short_name": "Vijf eikenbomen",
+  "short_name": "Vijf eiken",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f3ee",
+  "theme_color": "#2f3b35",
   "icons": [
     {
       "src": "/assets/images/favicon-180x180.png",
@@ -12,8 +17,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "theme_color": "#2f3b35",
-  "background_color": "#f6f3ee",
-  "display": "standalone"
+  ]
 }
