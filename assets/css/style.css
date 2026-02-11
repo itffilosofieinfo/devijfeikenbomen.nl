@@ -298,9 +298,12 @@ html{
 }
 
 .hero-main{
+  padding: clamp(28px, 3.5vw, 40px);  /* meer ruimte */
+  border-radius: var(--radius-lg);
   background: rgba(255,255,255,.94);  /* bijna vast */
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
+   max-width: 60ch;
 }
 
 .hero-main h1{
