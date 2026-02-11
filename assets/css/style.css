@@ -284,10 +284,9 @@ html{
 }
 
 .hero--with-bg .hero__overlay{
-  position:absolute;
-  inset:0;
-  background: rgba(246,243,238,.22);
+  background: rgba(246,243,238,.35);
 }
+
 
 .hero--with-bg .wrap{ position: relative; }
 
@@ -299,12 +298,9 @@ html{
 }
 
 .hero-main{
-  padding: clamp(18px, 2.8vw, 30px);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  background: var(--card-soft);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
+  background: rgba(255,255,255,.94);  /* bijna vast */
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 
 .hero-main h1{
