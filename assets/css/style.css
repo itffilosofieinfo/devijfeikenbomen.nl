@@ -47,28 +47,25 @@ body{
 /* =========================
    Jaarringen als achtergrond (hele site)
    ========================= */
+html, body { height: 100%; }
 
-/* Afbeeldinglaag */
-body::before{
-  content:"";
-  position: fixed;
-  inset: 0;
-  background: url("../images/jaarringen.jpg") center/cover no-repeat;
-  filter: saturate(var(--rings-sat)) contrast(var(--rings-contrast)) brightness(var(--rings-bright)) blur(var(--rings-blur));
-  opacity: var(--rings-opacity);
-  pointer-events: none;
-  z-index: -2;
+html{
+  /* jaarringen + warme mist (hele site) */
+  background:
+    /* mistlaag: maak gerust sterker voor leesbaarheid */
+    linear-gradient(rgba(246,243,238,.90), rgba(246,243,238,.90)),
+    url("/assets/images/jaarringen.jpg");
+  background-size: 140%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* werkt stabieler dan body::before in Safari */
 }
 
-/* Warme “mist” zodat tekst altijd leesbaar blijft */
-body::after{
-  content:"";
-  position: fixed;
-  inset: 0;
-  background: rgba(246,243,238,.72);
-  pointer-events: none;
-  z-index: -1;
+body{
+  background: transparent; /* belangrijk: anders “overpaint” je html-achtergrond */
 }
+
+
 
 img{ max-width:100%; height:auto; display:block; }
 
@@ -182,16 +179,14 @@ a:hover{ opacity:.88; text-decoration: underline; text-underline-offset: 2px; }
 /* =========================
    Cards + Typografie
    ========================= */
-
 .card{
-  background: var(--card);
+  background: rgba(255,255,255,.90);     /* minder doorschijnend */
   border: 1px solid rgba(34,48,43,.12);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
-
-  /* glass effect */
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
 }
+
 
 .section{
   padding: clamp(24px, 4vw, 46px) 0;
@@ -420,8 +415,8 @@ p{ margin: .6rem 0; }
   border: 1px solid rgba(34,48,43,.12);
   border-radius: 16px;
   padding: 14px 14px 12px 14px;
-  background: rgba(255,255,255,.80);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(12px);
   box-shadow: 0 10px 18px rgba(0,0,0,.05);
 }
 
