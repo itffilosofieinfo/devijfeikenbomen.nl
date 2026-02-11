@@ -362,12 +362,6 @@ p{ margin: .6rem 0; }
 /* =========================
    De vijf eiken (watermerk jaarringen)
    ========================= */
-.section-card--rings{
-  position: relative;
-  overflow: hidden;
-}
-
-/* sfeerlaag over volledige card */
 .section-card--rings::before{
   content:"";
   position:absolute;
@@ -375,13 +369,18 @@ p{ margin: .6rem 0; }
 
   background:
     linear-gradient(
-      rgba(246,243,238,.88),
-      rgba(246,243,238,.88)
+      rgba(246,243,238,.70),
+      rgba(232,240,234,.70)
     ),
     url("../images/jaarringen.jpg") center/cover no-repeat;
 
-  filter: grayscale(20%) contrast(95%);
-  opacity: .35;  /* sfeer, geen foto */
+  mix-blend-mode: multiply;   /* geeft diepte */
+  filter: contrast(110%) saturate(90%);
+  opacity: .45;
+
+  pointer-events:none;
+}
+
   pointer-events:none;
 }
 
