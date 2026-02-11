@@ -7,7 +7,7 @@ permalink: /
 
 <a class="skip" href="#main">Ga naar inhoud</a>
 
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="wrap">
     <div class="topbar">
       <a class="brand" href="#top" aria-label="Naar boven">
@@ -32,18 +32,22 @@ permalink: /
 </header>
 
 <main id="main">
-  <section id="top" class="hero">
+  <!-- HERO met Drents landschap -->
+  <section id="top" class="hero hero--with-bg" aria-label="Introductie">
+    <div class="hero__bg" aria-hidden="true"
+         style="background-image:url('{{ "/assets/images/hero-drenthe.jpg" | relative_url }}');"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
     <div class="wrap">
       <div class="hero-grid">
         <div class="card hero-main">
-          
-
           <h1>Meelopen wanneer de tijd kantelt</h1>
 
           <p class="lead">
             Dat moment waarop iemand te horen krijgt dat het einde dichterbij komt, verandert alles.
-Vragen dienen zich aan, relaties verschuiven, woorden kunnen te veel of te weinig zijn.
-Ik bied palliatieve begeleiding in Zweeloo en omgeving: nabijheid, gesprek en steun – voor wie dit hoort, en voor wie naast hen staat. 
+            Vragen dienen zich aan, relaties verschuiven, woorden kunnen te veel of te weinig zijn.
+            Ik bied palliatieve begeleiding in Zweeloo en omgeving: nabijheid, gesprek en steun – voor wie dit hoort,
+            en voor wie naast hen staat.
           </p>
 
           <div class="cta-row">
@@ -54,19 +58,19 @@ Ik bied palliatieve begeleiding in Zweeloo en omgeving: nabijheid, gesprek en st
           <hr class="divider" />
 
           <p class="fineprint">
-            Palliatieve begeleiding is geen vervanging van medische zorg. Waar nodig werk ik aanvullend naast huisarts, thuiszorg en hospicezorg.
+            Palliatieve begeleiding is geen vervanging van medische zorg. Waar nodig werk ik aanvullend naast huisarts,
+            thuiszorg en hospicezorg.
           </p>
         </div>
 
         <aside class="card hero-side" aria-label="Korte wegwijzer">
-          <!-- NIEUW: Decoratief logo bovenaan -->
           <div class="hero-logo-display">
             <img src="{{ '/assets/images/devijfeikenbomen-logo-horiz.png' | relative_url }}" alt="De vijf eikenbomen">
           </div>
 
           <div class="side-block">
             <h2>Waar mensen vaak mee komen</h2>
-            <p>Onrust, vragen, verdriet, angst, vermoeidheid. Of juist: "Ik wil het niet alleen doen."</p>
+            <p>Onrust, vragen, verdriet, angst, vermoeidheid. Of juist: “Ik wil het niet alleen doen.”</p>
           </div>
 
           <div class="side-block">
@@ -114,15 +118,20 @@ Ik bied palliatieve begeleiding in Zweeloo en omgeving: nabijheid, gesprek en st
 
   <section id="wat-ik-doe" class="section">
     <div class="wrap">
-      <div class="card section-card">
-        <h2 class="section-title">Wat ik doe</h2>
+      <div class="card section-card section-card--with-accent">
+        <div class="section-head">
+          <div class="bark-chip" aria-hidden="true"
+               style="background-image:url('{{ "/assets/images/eikenbast.jpg" | relative_url }}');"></div>
+          <h2 class="section-title">Wat ik doe</h2>
+        </div>
 
         <div class="cols">
           <div>
             <p>
               Vanaf het moment dat iemand hoort dat het einde naderbij komt, verandert het leven van toon.
-Tijd voelt anders, relaties worden intenser, en wat gezegd moet worden laat zich niet altijd gemakkelijk uitspreken.
-Ik ben er niet om het te verzachten of te verklaren, maar om mee te lopen en het samen draaglijk te maken.</p>
+              Tijd voelt anders, relaties worden intenser, en wat gezegd moet worden laat zich niet altijd gemakkelijk uitspreken.
+              Ik ben er niet om het te verzachten of te verklaren, maar om mee te lopen en het samen draaglijk te maken.
+            </p>
           </div>
 
           <div>
@@ -140,17 +149,22 @@ Ik ben er niet om het te verzachten of te verklaren, maar om mee te lopen en het
     </div>
   </section>
 
-  <!-- AANGEPAST: Vijf eikenbomen sectie nu met correcte structuur -->
+  <!-- De vijf eiken met subtiele jaarringen-watermerk achtergrond -->
   <section id="vijf-eiken" class="section">
     <div class="wrap">
-      <div class="section-card">
-        <h2 class="section-title">De vijf eikenbomen</h2>
+      <div class="card section-card section-card--rings">
+        <div class="section-head">
+          <div class="ring-seal" aria-hidden="true"
+               style="background-image:url('{{ "/assets/images/jaarringen.jpg" | relative_url }}');"></div>
+          <h2 class="section-title">De vijf eikenbomen</h2>
+        </div>
+
         <p class="muted">
-          De naam is geen beeldspraak, maar een werkwijze.  
+          De naam is geen beeldspraak, maar een werkwijze.
           Vijf aandachtspunten die richting geven in gesprekken en aanwezigheid wanneer het einde nabij is.
         </p>
 
-          <!-- De 5 eiken -->
+        <div class="eiken-grid" role="list" aria-label="Vijf aandachtspunten">
           <div class="eik" role="listitem">
             <strong>Aandacht</strong>
             <span>Stilstaan bij wat zich aandient, zonder het te hoeven oplossen of verklaren.</span>
@@ -197,7 +211,6 @@ Ik ben er niet om het te verzachten of te verklaren, maar om mee te lopen en het
               We beginnen met een korte kennismaking. Daarna spreken we af wat passend is:
               éénmalig of in een aantal momenten, met ruimte om bij te stellen.
             </p>
-            
           </div>
         </div>
       </div>
@@ -219,26 +232,4 @@ Ik ben er niet om het te verzachten of te verklaren, maar om mee te lopen en het
 
           <div>
             <p>
-              <strong>Over mij</strong><br>
-              Ik ben Nathalie van Hooff. Ik begeleid mensen en hun naasten in de palliatieve fase.
-              Mijn stijl is rustig en dichtbij: luisteren, vertragen, en samen kijken wat er nog gezegd of gedaan wil worden. Mijn begeleiding richt zich vooral op de periode waarin het leven als eindig wordt ervaren.
-Soms loop ik ook mee in de fase van het sterven zelf, als dat passend is.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <hr class="divider" />
-    <div class="footer-row">
-      <span>© {{ site.time | date: "%Y" }} De vijf eikenbomen</span>
-      <span class="footer-links">
-        <a href="#top">Naar boven</a><span aria-hidden="true"> · </span><a href="#contact">Contact</a>
-      </span>
-    </div>
-  </div>
-</footer>
+              <strong>
