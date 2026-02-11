@@ -369,14 +369,14 @@ p{ margin: .6rem 0; }
 
   background:
     linear-gradient(
-      rgba(246,243,238,.70),
-      rgba(232,240,234,.70)
+      rgba(246,243,238,.85),
+      rgba(246,243,238,.85)
     ),
     url("../images/jaarringen.jpg") center/cover no-repeat;
 
   mix-blend-mode: multiply;   /* geeft diepte */
-  filter: contrast(110%) saturate(90%);
-  opacity: .45;
+  filter: contrast(85%) brightness(105%) blur(2px);
+  opacity: .25;
 
   pointer-events:none;
 }
