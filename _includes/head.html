@@ -9,6 +9,7 @@
   {% endif %}
 </title>
 
+
 <meta name="description" content="{% if page.description and page.description != '' %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
 
@@ -25,8 +26,9 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{% if page.title and page.title != '' %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta name="twitter:description" content="{% if page.description and page.description != '' %}{{ page.description }}{% else %}{{ site.description }}">
-<meta name="twitter:image" content="{{ '/images/logo-share.jpg' | absolute_url }}">
+<meta name="twitter:description" content="{% if page.description and page.description != '' %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:image" content="{{ '/assets/images/logo-share.jpg' | absolute_url }}">
+
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +38,6 @@
 <!-- Styles -->
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-<!-- Favicons -->
 <!-- Favicons -->
 <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
 <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" sizes="any">
