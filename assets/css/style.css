@@ -3,20 +3,36 @@
    ========================= */
 
 :root{
-  --bg: #f6f3ee;           /* warm off-white */
-  --ink: #22302b;          /* diep groen-zwart */
+  --bg: #f6f3ee;             /* warm off-white */
+  --ink: #22302b;            /* diep groen-zwart */
   --muted: #5b6a62;
-  --card: rgba(255,255,255,.88);
-  --card-solid: #ffffff;
+
+  /* Cards */
+  --card: rgba(255,255,255,.78);
+  --card-strong: rgba(255,255,255,.86);
   --line: rgba(34,48,43,.14);
-  --accent: #2f5d50;       /* bos/petrol groen */
+
+  /* Accent */
+  --accent: #2f5d50;         /* petrol/bosgroen */
   --accent-2: #3b6f62;
+
+  /* Shadows */
   --shadow: 0 14px 38px rgba(0,0,0,.10);
   --shadow-soft: 0 8px 22px rgba(0,0,0,.07);
+
+  /* Radius */
   --radius: 18px;
   --radius-lg: 24px;
+
+  /* Background rings tuning */
+  --rings-opacity: .12;      /* lager = subtieler */
+  --rings-blur: 8px;         /* hoger = zachter */
+  --rings-contrast: .62;     /* lager = minder zichtbaar */
+  --rings-sat: .35;          /* lager = minder “foto” */
+  --rings-bright: 1.10;      /* iets lichter */
 }
 
+/* Reset / basics */
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body{
@@ -25,6 +41,33 @@ body{
   line-height:1.65;
   color: var(--ink);
   background: var(--bg);
+  overflow-x: hidden;
+}
+
+/* =========================
+   Jaarringen als achtergrond (hele site)
+   ========================= */
+
+/* Afbeeldinglaag */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: url("../images/jaarringen.jpg") center/cover no-repeat;
+  filter: saturate(var(--rings-sat)) contrast(var(--rings-contrast)) brightness(var(--rings-bright)) blur(var(--rings-blur));
+  opacity: var(--rings-opacity);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Warme “mist” zodat tekst altijd leesbaar blijft */
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(246,243,238,.72);
+  pointer-events: none;
+  z-index: -1;
 }
 
 img{ max-width:100%; height:auto; display:block; }
@@ -51,7 +94,7 @@ a:hover{ opacity:.88; text-decoration: underline; text-underline-offset: 2px; }
   width:auto;
   height:auto;
   padding:.6rem .8rem;
-  background: var(--card-solid);
+  background: rgba(255,255,255,.95);
   border:1px solid var(--line);
   border-radius: 999px;
   z-index: 9999;
@@ -91,7 +134,7 @@ a:hover{ opacity:.88; text-decoration: underline; text-underline-offset: 2px; }
   width: 44px;
   height: 44px;
   border-radius: 14px;
-  background: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.82);
   border: 1px solid rgba(34,48,43,.12);
   display:grid;
   place-items:center;
@@ -145,6 +188,9 @@ a:hover{ opacity:.88; text-decoration: underline; text-underline-offset: 2px; }
   border: 1px solid rgba(34,48,43,.12);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
+
+  /* glass effect */
+  backdrop-filter: blur(10px);
 }
 
 .section{
@@ -189,8 +235,8 @@ p{ margin: .6rem 0; }
   padding: .72rem 1.05rem;
   border-radius: 999px;
   border: 1px solid rgba(34,48,43,.14);
-  background: rgba(255,255,255,.72);
-  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(10px);
   color: var(--ink);
   text-decoration:none;
   box-shadow: 0 10px 22px rgba(0,0,0,.06);
@@ -217,25 +263,25 @@ p{ margin: .6rem 0; }
   overflow:hidden;
 }
 
+/* hero foto */
 .hero--with-bg .hero__bg{
   position:absolute;
   inset:0;
   background-size: cover;
   background-position: center;
   transform: scale(1.03);
-  filter: saturate(.86) contrast(1.03) brightness(1.02); /* rustiger */
+  filter: saturate(.86) contrast(1.03) brightness(1.02);
 }
 
+/* hero overlay (los van jaarringen) */
 .hero--with-bg .hero__overlay{
   position:absolute;
   inset:0;
-  background: rgba(246,243,238,.22); /* 0.15–0.28 */
+  background: rgba(246,243,238,.22);
 }
 
 /* inhoud boven achtergrond */
-.hero--with-bg .wrap{
-  position: relative;
-}
+.hero--with-bg .wrap{ position: relative; }
 
 .hero-grid{
   display:grid;
@@ -248,7 +294,8 @@ p{ margin: .6rem 0; }
   padding: clamp(18px, 2.8vw, 30px);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
-  background: rgba(255,255,255,.86);
+  background: var(--card-strong);
+  backdrop-filter: blur(12px);
 }
 
 .hero-main h1{
@@ -272,15 +319,16 @@ p{ margin: .6rem 0; }
 .hero-side{
   padding: 18px;
   border-radius: var(--radius-lg);
-  background: rgba(255,255,255,.84);
+  background: var(--card);
 }
 
 .hero-logo-display{
   border: 1px solid rgba(34,48,43,.10);
-  background: rgba(246,243,238,.65);
+  background: rgba(246,243,238,.62);
   border-radius: 16px;
   padding: 12px 12px;
   margin-bottom: 14px;
+  backdrop-filter: blur(10px);
 }
 
 .side-block h2{
@@ -307,9 +355,7 @@ p{ margin: .6rem 0; }
   margin: .6rem 0 0 0;
   padding-left: 1.1rem;
 }
-.list li{
-  margin: .35rem 0;
-}
+.list li{ margin: .35rem 0; }
 
 /* =========================
    Notices
@@ -360,47 +406,9 @@ p{ margin: .6rem 0; }
 }
 
 /* =========================
-   De vijf eiken (watermerk jaarringen)
+   De vijf eiken – items
    ========================= */
 
-
-.section-card--rings{
-  position: relative;
-  overflow: hidden;
-}
-
-/* zachte textuurlaag over de hele card */
-.section-card--rings::before{
-  content:"";
-  position:absolute;
-  inset: 0;
-
-  /* iets warmere waas + ringen */
-  background:
-    linear-gradient(
-      rgba(246,243,238,.94),
-      rgba(246,243,238,.94)
-    ),
-    url("/assets/images/jaarringen.jpg")
-
-  /* maak het echt ‘papierachtig’ */
-  filter: saturate(.45) contrast(.72) brightness(1.10) blur(4px);
-  opacity: .16;
-
-  pointer-events:none;
-}
-
-.section-card--rings > *{
-  position: relative;
-  z-index: 1;
-}
-
-
-
-
-
-
-/* eiken items */
 .eiken-grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -412,7 +420,8 @@ p{ margin: .6rem 0; }
   border: 1px solid rgba(34,48,43,.12);
   border-radius: 16px;
   padding: 14px 14px 12px 14px;
-  background: rgba(255,255,255,.78);
+  background: rgba(255,255,255,.80);
+  backdrop-filter: blur(10px);
   box-shadow: 0 10px 18px rgba(0,0,0,.05);
 }
 
@@ -458,9 +467,7 @@ p{ margin: .6rem 0; }
   font-size: .95rem;
 }
 
-.footer-links a{
-  color: var(--muted);
-}
+.footer-links a{ color: var(--muted); }
 .footer-links a:hover{
   color: var(--ink);
   text-decoration:none;
@@ -488,16 +495,6 @@ p{ margin: .6rem 0; }
   .ring-seal, .bark-chip{ width: 40px; height: 40px; }
   .footer-row{ flex-direction: column; align-items:flex-start; }
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --favicon-color: #f6f3ee;
-  }
-}
-
-
-/* --- kleine kwaliteitsfixes --- */
-body{ overflow-x: hidden; }
 
 /* Zorg dat anker-links (#contact etc.) niet onder de sticky header vallen */
 :target{ scroll-margin-top: 90px; }
-
