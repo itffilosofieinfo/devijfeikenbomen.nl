@@ -35,13 +35,19 @@ html, body{ height: 100%; }
 
 body{
   margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  line-height:1.65;
+
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  font-size: 17px;              /* iets royaler */
+  line-height: 1.75;            /* meer adem */
+  letter-spacing: 0.002em;
+
   color: var(--ink);
-  background: transparent;          /* belangrijk: html draagt achtergrond */
+  background: transparent;
   min-height: 100vh;
   overflow-x: hidden;
 }
+
+
 
 img{ max-width:100%; height:auto; display:block; }
 
@@ -222,10 +228,12 @@ html{
 }
 
 .section-title{
-  margin:0 0 .65rem 0;
-  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
-  line-height: 1.18;
-  letter-spacing: .01em;
+  font-family: Fraunces, ui-serif, Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  margin: 0 0 .75rem 0;
 }
 
 /* =========================
@@ -300,15 +308,20 @@ html{
 }
 
 .hero-main h1{
-  margin: 0 0 .75rem 0;
-  font-size: clamp(2rem, 3.6vw, 3rem);
-  line-height: 1.08;
+  font-family: Fraunces, ui-serif, Georgia, "Times New Roman", serif;
+  font-weight: 500;              /* rustiger dan 600 */
+  font-size: clamp(2rem, 3.4vw, 2.6rem); /* iets minder groot */
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  margin: 0 0 .85rem 0;
 }
 
 .lead{
-  font-size: clamp(1.05rem, 1.2vw, 1.2rem);
-  color: #2a3a34;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: #2c3a34;
 }
+
 
 .cta-row{
   display:flex;
