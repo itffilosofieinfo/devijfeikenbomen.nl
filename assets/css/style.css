@@ -1,53 +1,45 @@
 /* =========================
-   De Vijf Eikenbomen – Complete stylesheet (Safari-proof)
-   Pad: assets/css/style.css
+   De Vijf Eikenbomen – Stil & Consistent
+   Bestand: assets/css/style.css
    ========================= */
 
-/* ---------- Design tokens ---------- */
+/* ---------- Tokens ---------- */
 :root{
-  --bg: #f6f3ee;           /* warm off-white */
-  --ink: #22302b;          /* diep groen-zwart */
+  --bg: #f6f3ee;
+  --ink: #22302b;
   --muted: #5b6a62;
 
-  --card: rgba(255,255,255,.90);       /* leesbaarheid eerst */
-  --card-soft: rgba(255,255,255,.86);
-  --card-chip: rgba(255,255,255,.78);
+  --accent: #2f5d50;
 
-  --line: rgba(34,48,43,.14);
-  --accent: #2f5d50;       /* petrol */
-  --accent-2: #3b6f62;
+  --card: rgba(255,255,255,.96);      /* rustig, bijna vast */
+  --card-soft: rgba(255,255,255,.94);
+  --line: rgba(34,48,43,.08);
 
-  --shadow: 0 14px 38px rgba(0,0,0,.10);
-  --shadow-soft: 0 8px 22px rgba(0,0,0,.07);
+  --shadow: 0 4px 14px rgba(0,0,0,.04);
+  --shadow-soft: 0 2px 10px rgba(0,0,0,.03);
 
   --radius: 18px;
   --radius-lg: 24px;
 
-  /* Background tuning */
-  --mist: .97;             /* hoger = rustiger (0.90–0.97) */
-  --glass-blur: 14px;      /* blur op cards */
+  --mist: .97; /* hoger = rustiger achtergrond */
 }
 
-/* ---------- Reset / base ---------- */
+/* ---------- Base ---------- */
 *{ box-sizing:border-box; }
+html, body{ height:100%; }
 html{ scroll-behavior:smooth; }
-html, body{ height: 100%; }
 
 body{
   margin:0;
-
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  font-size: 17px;              /* iets royaler */
-  line-height: 1.75;            /* meer adem */
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  font-size: 17px;
+  line-height: 1.75;
   letter-spacing: 0.002em;
-
   color: var(--ink);
   background: transparent;
-  min-height: 100vh;
-  overflow-x: hidden;
+  min-height:100vh;
+  overflow-x:hidden;
 }
-
-
 
 img{ max-width:100%; height:auto; display:block; }
 
@@ -56,16 +48,16 @@ img{ max-width:100%; height:auto; display:block; }
   margin: 0 auto;
 }
 
-a{ color: var(--accent); text-decoration: none; }
-a:hover{ opacity:.88; text-decoration: underline; text-underline-offset: 2px; }
+a{ color: var(--accent); text-decoration:none; }
+a:hover{ text-decoration: underline; text-underline-offset: 2px; opacity:.9; }
 
-p{ margin: .6rem 0; }
+p{ margin: .7rem 0; }
 .muted{ color: var(--muted); }
-.small{ font-size: .95rem; }
+.small{ font-size: .98rem; }
 
 .divider{
-  border: 0;
-  border-top: 1px solid rgba(34,48,43,.12);
+  border:0;
+  border-top: 1px solid rgba(34,48,43,.10);
   margin: 1.15rem 0;
 }
 
@@ -75,8 +67,7 @@ p{ margin: .6rem 0; }
   margin: 0;
 }
 
-/* ---------- Site background (Safari/Opera stable) ---------- */
-/* Let op: we zetten dit op html (niet op body::before) om “halverwege stoppen” te voorkomen. */
+/* ---------- Achtergrond (Safari-proof) ---------- */
 html{
   background-color: var(--bg);
   background-image:
@@ -85,7 +76,7 @@ html{
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: cover, cover;
-  background-attachment: fixed, fixed;  /* stabiel in Safari */
+  background-attachment: fixed, fixed;
 }
 
 /* ---------- Skip link ---------- */
@@ -103,7 +94,7 @@ html{
   width:auto;
   height:auto;
   padding:.6rem .8rem;
-  background: rgba(255,255,255,.96);
+  background: rgba(255,255,255,.98);
   border:1px solid var(--line);
   border-radius: 999px;
   z-index: 9999;
@@ -116,10 +107,8 @@ html{
   position: sticky;
   top: 0;
   z-index: 50;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  background: rgba(246,243,238,.78);
-  border-bottom: 1px solid rgba(34,48,43,.10);
+  background: rgba(246,243,238,.92);
+  border-bottom: 1px solid rgba(34,48,43,.08);
 }
 
 .topbar{
@@ -143,13 +132,14 @@ html{
   width: 44px;
   height: 44px;
   border-radius: 14px;
-  background: rgba(255,255,255,.92);
-  border: 1px solid rgba(34,48,43,.12);
+  background: rgba(255,255,255,.98);
+  border: 1px solid rgba(34,48,43,.10);
   display:grid;
   place-items:center;
   overflow:hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+  box-shadow: 0 6px 16px rgba(0,0,0,.04);
 }
+
 .logo img{
   width: 40px;
   height: 40px;
@@ -182,8 +172,8 @@ html{
   border: 1px solid transparent;
 }
 .nav a:hover{
-  border-color: rgba(34,48,43,.14);
-  background: rgba(255,255,255,.60);
+  border-color: rgba(34,48,43,.10);
+  background: rgba(255,255,255,.50);
   text-decoration:none;
 }
 
@@ -191,40 +181,18 @@ html{
    Cards + Typografie
    ========================= */
 .card{
-  background: rgba(255,255,255,.96);   /* bijna vast */
-  border: 1px solid rgba(34,48,43,.08);
+  background: var(--card);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-
-  box-shadow: 0 4px 14px rgba(0,0,0,.04);
-
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+  box-shadow: var(--shadow);
 }
-
-
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius: inherit;
-
-  background: linear-gradient(
-    to bottom right,
-    rgba(255,255,255,.25),
-    rgba(255,255,255,0) 65%
-  );
-
-  pointer-events:none;
-}
-
-
 
 .section{
   padding: clamp(24px, 4vw, 46px) 0;
 }
 
 .section-card{
-  padding: clamp(18px, 2.8vw, 28px);
+  padding: clamp(20px, 3vw, 30px);
 }
 
 .section-title{
@@ -237,33 +205,30 @@ html{
 }
 
 /* =========================
-   Buttons
+   Buttons (rustig)
    ========================= */
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding: .72rem 1.05rem;
+  padding: .70rem 1.05rem;
   border-radius: 999px;
-  border: 1px solid rgba(34,48,43,.14);
-  background: rgba(255,255,255,.86);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(34,48,43,.12);
+  background: rgba(255,255,255,.92);
   color: var(--ink);
   text-decoration:none;
-  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+  box-shadow: 0 6px 14px rgba(0,0,0,.04);
 }
 .btn:hover{ text-decoration:none; opacity:.92; }
 
 .btn.primary{
-  background: rgba(47,93,80,.96);
-  border-color: rgba(47,93,80,.96);
+  background: rgba(47,93,80,.92);
+  border-color: rgba(47,93,80,.92);
   color: #fff;
 }
-.btn.primary:hover{ opacity:.94; }
 
 /* =========================
-   Hero met landschap
+   Hero met landschap (geen mistige kaart)
    ========================= */
 .hero{
   position: relative;
@@ -280,13 +245,14 @@ html{
   background-size: cover;
   background-position: center;
   transform: scale(1.03);
-  filter: saturate(.86) contrast(1.03) brightness(1.02);
+  filter: saturate(.84) contrast(1.02) brightness(1.00); /* rustiger landschap */
 }
 
 .hero--with-bg .hero__overlay{
-  background: rgba(246,243,238,.35);
+  position:absolute;
+  inset:0;
+  background: rgba(246,243,238,.38); /* meer rust achter cards */
 }
-
 
 .hero--with-bg .wrap{ position: relative; }
 
@@ -298,18 +264,17 @@ html{
 }
 
 .hero-main{
-  padding: clamp(28px, 3.5vw, 40px);  /* meer ruimte */
+  padding: clamp(28px, 3.5vw, 40px);  /* gelijk aan andere cards */
   border-radius: var(--radius-lg);
-  background: rgba(255,255,255,.94);  /* bijna vast */
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-   max-width: 60ch;
+  background: rgba(255,255,255,.96);  /* helder, niet mistig */
+  border: 1px solid rgba(34,48,43,.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,.05);
 }
 
 .hero-main h1{
   font-family: Fraunces, ui-serif, Georgia, "Times New Roman", serif;
-  font-weight: 500;              /* rustiger dan 600 */
-  font-size: clamp(2rem, 3.4vw, 2.6rem); /* iets minder groot */
+  font-weight: 500;
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
   line-height: 1.15;
   letter-spacing: 0.01em;
   margin: 0 0 .85rem 0;
@@ -319,8 +284,8 @@ html{
   font-size: 1.08rem;
   line-height: 1.8;
   color: #2c3a34;
+  max-width: 60ch;
 }
-
 
 .cta-row{
   display:flex;
@@ -330,24 +295,24 @@ html{
 }
 
 .hero-side{
-  padding: 18px;
+  padding: 22px;
   border-radius: var(--radius-lg);
-  background: var(--card);
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(34,48,43,.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,.05);
 }
 
 .hero-logo-display{
   border: 1px solid rgba(34,48,43,.10);
   background: rgba(246,243,238,.70);
   border-radius: 16px;
-  padding: 12px 12px;
+  padding: 12px;
   margin-bottom: 14px;
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
 }
 
 .side-block h2{
   margin: 0 0 .35rem 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 .side-block p{
   margin: 0 0 1rem 0;
@@ -371,19 +336,19 @@ html{
 .list li{ margin: .35rem 0; }
 
 /* =========================
-   Notices
+   Contactverwijzingen (consistent, geen notice)
    ========================= */
 .notice{
-  margin-top: 12px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(34,48,43,.12);
-  background: rgba(47,93,80,.06);
-  color: #244138;
+  margin-top: 1rem;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-style: italic;
 }
 
 /* =========================
-   Section heads met beeldaccenten
+   Section heads met beeldaccenten (klein, rustig)
    ========================= */
 .section-head{
   display:flex;
@@ -393,27 +358,27 @@ html{
 }
 
 .ring-seal{
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
-  border: 1px solid rgba(34,48,43,.14);
+  border: 1px solid rgba(34,48,43,.10);
   background-size: cover;
   background-position: center;
-  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,.05);
   flex: 0 0 auto;
-  filter: saturate(.82) contrast(1.03) brightness(1.02);
+  filter: saturate(.80) contrast(1.02) brightness(1.02);
 }
 
 .bark-chip{
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 16px;
-  border: 1px solid rgba(34,48,43,.14);
+  border: 1px solid rgba(34,48,43,.10);
   background-size: cover;
   background-position: center;
-  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,.05);
   flex: 0 0 auto;
-  filter: saturate(.95) contrast(1.02);
+  filter: saturate(.92) contrast(1.01);
 }
 
 /* =========================
@@ -431,12 +396,8 @@ html{
   border: 1px solid rgba(34,48,43,.06);
   border-radius: 16px;
   padding: 14px 14px 12px 14px;
-
-  box-shadow: 0 2px 8px rgba(0,0,0,.02);
+  box-shadow: var(--shadow-soft);
 }
-
-
-
 
 .eik strong{
   display:block;
@@ -483,6 +444,11 @@ html{
 }
 
 /* =========================
+   Helpers
+   ========================= */
+:target{ scroll-margin-top: 90px; }
+
+/* =========================
    Responsive
    ========================= */
 @media (max-width: 980px){
@@ -502,14 +468,4 @@ html{
   .section-head{ align-items:flex-start; }
   .ring-seal, .bark-chip{ width: 40px; height: 40px; }
   .footer-row{ flex-direction: column; align-items:flex-start; }
-}
-
-/* Zorg dat anker-links (#contact etc.) niet onder de sticky header vallen */
-:target{ scroll-margin-top: 90px; }
-
-/* ---------- Fallback: geen blur ondersteuning ---------- */
-@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-  .card, .eik, .hero-main, .hero-side, .hero-logo-display {
-    background: rgba(255,255,255,.96);
-  }
 }
