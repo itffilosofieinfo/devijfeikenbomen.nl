@@ -13,7 +13,6 @@ permalink: /
       <a class="brand" href="#top" aria-label="Naar boven">
         <div class="logo" aria-hidden="true">
           <img src="{{ '/assets/images/devijfeikenbomen-icon.png' | relative_url }}" alt="De Vijf Eikenbomen">
-          <img src="{{ '/assets/images/devijfeikenbomen-icon.png' | relative_url }}" alt="De Vijf Eikenbomen" width="40" height="40" decoding="async">
         </div>
         <div class="brand-text">
           <strong>De vijf eikenbomen</strong>
@@ -25,8 +24,6 @@ permalink: /
         <a href="#voor-wie">Voor wie</a>
         <a href="#wat-ik-doe">Wat ik doe</a>
         <a href="#vijf-eiken">De vijf eikenbomen</a>
-        <a href="#over-mij">Over mij</a>
-        <a href="#praktisch">Praktisch</a>
         <a href="#tarieven">Tarieven</a>
         <a href="#over-mij">Over mij</a>
         <a href="#contact">Contact</a>
@@ -73,7 +70,6 @@ permalink: /
         <aside class="card hero-side" aria-label="Korte wegwijzer">
           <div class="hero-logo-display">
             <img src="{{ '/assets/images/devijfeikenbomen-logo-horiz.png' | relative_url }}" alt="De vijf eikenbomen">
-            <img src="{{ '/assets/images/devijfeikenbomen-logo-horiz.png' | relative_url }}" alt="De vijf eikenbomen" loading="lazy" decoding="async">
           </div>
 
           <div class="side-block">
@@ -99,7 +95,126 @@ permalink: /
           <div>
             <p>
               De vijf eikenbomen is er voor mensen in de palliatieve fase
-@@ -219,50 +218,53 @@ permalink: /
+              die niet alleen medische zorg nodig hebben,
+              maar ook ruimte zoeken voor gesprek, afronding en betekenis.
+            </p>
+
+            <ul class="list">
+              <li>Mensen die weten dat zij gaan sterven (thuis of elders)</li>
+              <li>Naasten die waken, zorgen en mee-dragen</li>
+              <li>Mensen die verlangen naar rust, afronding, verzoening of helderheid</li>
+            </ul>
+          </div>
+
+          <div>
+            <p><strong>Wanneer past het minder?</strong></p>
+            <ul class="list">
+              <li>Bij acute medische of psychiatrische crisiszorg</li>
+              <li>Wanneer vooral praktische thuiszorg nodig is</li>
+              <li>Wanneer een strak, doelgericht traject verwacht wordt</li>
+            </ul>
+
+            <p class="muted small">Twijfel je? Neem gerust contact op. Dan kijken we samen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wat-ik-doe" class="section">
+    <div class="wrap">
+      <div class="card section-card section-card--with-accent">
+        <div class="section-head">
+          <div class="bark-chip" aria-hidden="true"
+               style="background-image:url('{{ "/assets/images/eikenbast.jpg" | relative_url }}');"></div>
+          <h2 class="section-title">Wat ik concreet doe</h2>
+        </div>
+
+        <div class="cols">
+          <div>
+            <p>
+              Sterven is niet alleen een medisch proces,
+              maar ook een menselijke, relationele en existentiële overgang.
+              Ik loop mee in die periode.
+            </p>
+          </div>
+
+          <div>
+            <ul class="list">
+              <li>Individuele gesprekken over angst, betekenis, loslaten en afronden</li>
+              <li>Helpen woorden vinden voor wat nog gezegd wil worden</li>
+              <li>Ondersteunen bij het voorbereiden van afscheid of kleine rituelen</li>
+              <li>Aanwezig zijn bij moeilijke familiegesprekken</li>
+              <li>Meewaken of simpelweg aanwezig zijn in stilte</li>
+              <li>Nabij zijn voor naasten — vóór en desgewenst na het overlijden</li>
+            </ul>
+
+            <div class="notice">
+              Ik neem niets over. Ik voeg iets toe.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vijf-eiken" class="section">
+    <div class="wrap">
+      <div class="card section-card section-card--rings">
+        <div class="section-head">
+          <div class="ring-seal" aria-hidden="true"
+               style="background-image:url('{{ "/assets/images/jaarringen.jpg" | relative_url }}');"></div>
+          <h2 class="section-title">De vijf eikenbomen</h2>
+        </div>
+
+        <p class="muted">
+          Vijf aandachtspunten die richting geven in gesprekken wanneer het leven afgerond wordt.
+        </p>
+
+        <div class="eiken-grid" role="list">
+          <div class="eik" role="listitem">
+            <strong>Aandacht</strong>
+            <span>Blijven bij wat zich aandient, zonder het te hoeven oplossen.</span>
+          </div>
+          <div class="eik" role="listitem">
+            <strong>Tijd</strong>
+            <span>Vertragen en aanwezig zijn bij het moment.</span>
+          </div>
+          <div class="eik" role="listitem">
+            <strong>Stilte</strong>
+            <span>Ruimte laten waar woorden ontbreken.</span>
+          </div>
+          <div class="eik" role="listitem">
+            <strong>Betekenis</strong>
+            <span>Terugkijken op wat geleefd is en wat nog afgerond wil worden.</span>
+          </div>
+          <div class="eik" role="listitem">
+            <strong>Verbondenheid</strong>
+            <span>Aandacht voor relaties en wat overstijgt.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tarieven" class="section">
+  <div class="wrap">
+    <div class="card section-card section-card--with-accent">
+      <h2 class="section-title">Tarieven</h2>
+
+      <div class="cols">
+        <div>
+          <p><strong>Kennismakingsgesprek</strong><br>
+          Een eerste gesprek van ongeveer 30 minuten (telefonisch of in overleg).
+          Vrijblijvend en kosteloos.</p>
+
+          <p><strong>Basispakket – Samen lopen</strong><br>
+          Drie gesprekken van 60–90 minuten.<br>
+          €275</p>
+
+          <p class="muted small">
+            Deze gesprekken kunnen plaatsvinden bij u thuis of op een afgesproken plek.
+          </p>
         </div>
 
         <div>
@@ -153,7 +268,32 @@ permalink: /
             Dat ik kan blijven wanneer het moeilijk wordt.
           </p>
         </div>
-@@ -295,56 +297,58 @@ permalink: /
+
+        <div>
+          <p>
+            In de jaren daarna ben ik mij verder gaan verdiepen in existentiële vragen
+            rond sterven, betekenis en afscheid. Mijn achtergrond in de filosofie
+            helpt mij om ruimte te houden voor wat niet eenvoudig is.
+          </p>
+
+          <p>
+            Ik werk niet vanuit protocollen.
+            Ik werk vanuit aandacht.
+          </p>
+
+          <p>
+            Ik vervang geen medische of psychologische zorg.
+            Ik neem ook niet de plaats in van familie of naasten.
+            Ik werk aanvullend — en neem hen desgewenst mee in het proces,
+            of ondersteun hen in hun rol.
+          </p>
+
+          <p>
+            Voor mij is sterven geen mislukking, maar een overgang.
+            Wat achter de dood ligt, blijft voor ieder mens een persoonlijk mysterie.
+            Ik laat daar ruimte voor.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -180,7 +320,6 @@ permalink: /
           <p class="contact-line">
             <strong>Telefoon</strong>:
             <a href="tel:+31646647313">06-46647313</a>
-            <a href="tel:+31646647313">06 4664 7313</a>
           </p>
 
           <div class="notice">
